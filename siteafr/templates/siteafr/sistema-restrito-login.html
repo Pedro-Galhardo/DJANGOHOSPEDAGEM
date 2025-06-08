@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFR - Login no Sistema  | Brasil</title>
+  <link rel="stylesheet" href="{% static 'siteafr/sistema-restrito-login.css' %}
+" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+<a href="{% url 'index' %}" class="btn-voltar">Voltar</a>
+      <div class="login-container">
+          <div class="flex">
+              <img src="{% static 'siteafr/images/LogosimplesAFR.png' %}"/>
+    <h2>Login Sistema</h2>
+          </div>
+    <form method="POST" action="{% url 'sistema-restrito-login' %}">
+        {% csrf_token %}
+      <div class="form-group">
+        <label for="username">Usuário</label>
+        <input type="text" id="username" name="username" required autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" required autocomplete="current-password">
+      </div>
+        <div class="flex-bt">
+      <button class="login-button" type="submit">Entrar</button>
+        </div>
+        <div class="erro">
+    {% if erro %}
+  <p style="color:red; text-align:center;">{{ erro }}</p>
+{% endif %}
+        </div>
+    </form>
+  </div>
+
+
+
+
+    
+</body>
+</html>

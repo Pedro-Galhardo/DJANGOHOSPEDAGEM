@@ -1,0 +1,217 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFR - Certificações | Brasil</title>
+  <link rel="stylesheet" href= {% static 'siteafr/certificacoes.css' %} />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <header class="top-header">
+    <div class="logo-container">
+      <a href="{% url 'index' %}"><img src="{% static 'siteafr/images/logo.jpg' %}" alt="Logo da AFR" class="logo" title="Logo da AFR"/></a>
+    </div>
+    <div class="info-container">
+      <div class="info-block">
+        <i class="icons fa-solid fa-location-dot"></i>
+        <div class="column">
+          <span class="bold">Niterói, RJ</span>
+          <span>Rua Lopes Trovão, 301</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-envelope"></i>
+        <div class="column">
+          <span class="bold">afr@afr.org.br</span>
+          <span>Atendimento: 07:00 - 19:00</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-mobile-screen-button"></i>
+        <div class="column">
+          <span class="bold">(21) 2109-2626</span>
+          <span>Fale conosco!</span>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div class="info-block">
+        <a href="{% url 'doacao' %}" class="btn"><i class="icon-white fa-solid fa-heart"></i>Fazer Doação</a>
+      </div>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <nav class="main-nav">
+    <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Sobre</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'nossahistoria' %}">Nossa História</a>
+          <a href="{% url 'governanca' %}">Governança</a>
+          <a href="{% url 'transparencia' %}">Transparência e prestação de contas</a>
+          <a href="{% url 'certificacoes' %}">Certificações</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Área de atuação</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+          <a href="{% url 'depmedico' %}">Departamento Médico</a>
+          <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+          <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Contato</a>
+        <div class="dropdown-menu">
+            <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+            <a href="{% url 'voluntariado' %}">Voluntariado</a>
+            <a href="{% url 'sac' %}">Fale com a AFR</a>
+            <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+            <a href="{% url 'visita' %}">Faça uma visita</a>
+        </div>
+      </li>
+      <li><a href="{% url 'atendimento' %}">Atendimento</a></li>
+    </ul>
+  </nav>
+  <nav class="sidebar" id="sidebar">
+       <a href="{% url 'index' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">HOME<span></span></div></a>
+    <div class="menu-item" onclick="toggleSubmenu(this)">SOBRE<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'nossahistoria' %}">Nossa História</a>
+      <a href="{% url 'governanca' %}">Governança</a>
+      <a href="{% url 'transparencia' %}">Prestação de contas</a>
+      <a href="{% url 'certificacoes' %}">Certificações</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">ÁREA DE ATUAÇÃO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+      <a href="{% url 'index' %}">Departamento Médico</a>
+      <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+      <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">CONTATO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'visita' %}">Faça uma visita</a>
+      <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+      <a href="{% url 'voluntariado' %}">Voluntariado</a>
+      <a href="{% url 'sac' %}">Fale com a AFR</a>
+      <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+    </div>
+
+    <a href="{% url 'atendimento' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">ATENDIMENTO<span></span></div></a>
+  </nav>
+
+
+  
+
+<div class="banner">
+  <img src="{% static 'siteafr/images/imgpedrocert6.avif' %}">
+  <div class="overlay"></div>
+  <div class="banner-texto">Certificações</div>
+</div>
+
+
+<div class="transparencia-container">
+  <div class="transparencia-texto">
+    
+Em reconhecimento ao compromisso com a excelência e à busca pela evolução constante, 
+que pautam o trabalho da AFR, foram conquistadas importantes premiações e certificações.
+  </div>
+</div>
+
+
+
+<div class="container-certificado">
+    <div class="imagem">
+        <img src="{% static 'siteafr/images/CEBASCERTIFICACAO.png' %}">
+    </div>
+    <div class="texto">
+        <h1>Certificado de Entidade Beneficente de Assistência Social na Área de Saúde (CEBAS)</h1>
+        <p>
+            O Certificado de Entidade Beneficente de Assistência Social na Área de Saúde (CEBAS) é concedido pelo Ministério da Saúde a pessoas jurídicas de direito privado, sem fins lucrativos, reconhecidas como Entidade Beneficente de Assistência Social para a prestação de serviços na Área de Saúde. A renovação garante imunidade tributária, habilita a Instituição a receber recursos públicos, tornando-a reconhecida por parte do governo como uma Instituição filantrópica, que presta serviço social.
+        </p>
+    </div>
+</div>
+
+
+<div class="premios-container">
+    <h1>Prêmios</h1>
+    <div class="premios">
+        <div class="premio">
+            <img src="{% static 'siteafr/images/imgpedrocert3.avif' %}" alt="Prêmio 1">
+        </div>
+        <div class="premio">
+            <img src="{% static 'siteafr/images/imgpedrocert5.avif' %}" alt="Prêmio 2">
+        </div>
+        <div class="premio">
+            <img src="{% static 'siteafr/images/imgpedrocert4.avif' %}" alt="Prêmio 3">
+        </div>
+        <div class="premio">
+            <img src="{% static 'siteafr/images/imgpedrocert2.avif' %}" alt="Prêmio 4">
+        </div>
+        <div class="premio">
+            <img src="{% static 'siteafr/images/imgpedrocert7.avif' %}" alt="Prêmio 5">
+        </div>
+    </div>
+</div>
+
+
+    
+ <footer class="footer">
+  <div class="footer-header">
+    <a href="#"><img src="{% static 'siteafr/images/AFRIMG4.png' %}" alt="Logo da AFR" class="logo" title="Logo da AFR" id="voltarTopo"/></a>
+    <div class="social-icons-footer">
+      <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>UNIDADES</h3>
+      <ul>
+        <li><a href="{% url 'unidadefluminense' %}">Associação Fluminense de Reabilitação</a></li>
+        <li><a href="{% url 'unidadelisaura' %}">Unidade de Reabilitação e Atendimento Especializado Lisaura Ruas</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>OUTRAS PÁGINAS</h3>
+      <ul>
+        <li><a href="{% url 'parceiroscaptacao' %}">Parceiros de Captação</a></li>
+        <li><a href="{% url 'imprensa' %}">Imprensa</a></li>
+        <li><a href="{% url 'editais' %}">Editais</a></li>
+        <li><a href="{% url 'fag' %}">Perguntas Frequentes</a></li>
+        <li><a href="{% url 'guia' %}">Guia</a></li>
+        <li><a href="{% url 'privacidade' %}">Política de Privacidade</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>COMO AJUDAR</h3>
+      <ul>
+        <li><a href="{% url 'doacao' %}" class="btn-footer"><i class="icon-red fa-solid fa-heart"></i>Fazer Doação</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>CERTIFICAÇÕES</h3>
+      <ul>
+        <li><img src="{% static 'siteafr/images/CEBASCERTIFICACAO.png' %}" class="cert"/></li>
+      </ul>
+    </div>
+  </div>
+  </footer>
+<script src="{% static 'siteafr/script.js' %}"></script>
+</body>
+
+
+</html>

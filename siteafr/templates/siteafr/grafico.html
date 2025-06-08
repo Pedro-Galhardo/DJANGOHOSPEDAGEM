@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema AFR - CRUD de Pacientes</title>
+    <link rel="stylesheet" href="{% static 'siteafr/sistema-restrito-crud.css' %}">
+</head>
+<body>
+<a href="{% url 'index' %}" class="btn-voltar">Voltar</a>
+<div class="center">
+    <img src="data:image/png;base64,{{ grafico }}" alt="Gráfico de Idades">
+</div>
+</body>
+</html>

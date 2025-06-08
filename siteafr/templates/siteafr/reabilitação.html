@@ -1,0 +1,305 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFR - Reabilitação | Brasil</title>
+  <link rel="stylesheet" href="{% static 'siteafr/reabilitacao.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <header class="top-header">
+    <div class="logo-container">
+      <a href="{% url 'index' %}"><img src="{% static 'siteafr/images/logo.jpg' %}" alt="Logo da AFR" class="logo" title="Logo da AFR"/></a>
+    </div>
+    <div class="info-container">
+      <div class="info-block">
+        <i class="icons fa-solid fa-location-dot"></i>
+        <div class="column">
+          <span class="bold">Niterói, RJ</span>
+          <span>Rua Lopes Trovão, 301</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-envelope"></i>
+        <div class="column">
+          <span class="bold">afr@afr.org.br</span>
+          <span>Atendimento: 07:00 - 19:00</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-mobile-screen-button"></i>
+        <div class="column">
+          <span class="bold">(21) 2109-2626</span>
+          <span>Fale conosco!</span>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div class="info-block">
+        <a href="{% url 'doacao' %}" class="btn"><i class="icon-white fa-solid fa-heart"></i>Fazer Doação</a>
+      </div>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <nav class="main-nav">
+    <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Sobre</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'nossahistoria' %}">Nossa História</a>
+          <a href="{% url 'governanca' %}">Governança</a>
+          <a href="{% url 'transparencia' %}">Transparência e prestação de contas</a>
+          <a href="{% url 'certificacoes' %}">Certificações</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Área de atuação</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+          <a href="{% url 'depmedico' %}">Departamento Médico</a>
+          <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+          <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Contato</a>
+        <div class="dropdown-menu">
+            <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+            <a href="{% url 'voluntariado' %}">Voluntariado</a>
+            <a href="{% url 'sac' %}">Fale com a AFR</a>
+            <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+            <a href="{% url 'visita' %}">Faça uma visita</a>
+        </div>
+      </li>
+      <li><a href="{% url 'atendimento' %}">Atendimento</a></li>
+    </ul>
+  </nav>
+  <nav class="sidebar" id="sidebar">
+       <a href="{% url 'index' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">HOME<span></span></div></a>
+    <div class="menu-item" onclick="toggleSubmenu(this)">SOBRE<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'nossahistoria' %}">Nossa História</a>
+      <a href="{% url 'governanca' %}">Governança</a>
+      <a href="{% url 'transparencia' %}">Prestação de contas</a>
+      <a href="{% url 'certificacoes' %}">Certificações</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">ÁREA DE ATUAÇÃO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+      <a href="{% url 'index' %}">Departamento Médico</a>
+      <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+      <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">CONTATO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'visita' %}">Faça uma visita</a>
+      <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+      <a href="{% url 'voluntariado' %}">Voluntariado</a>
+      <a href="{% url 'sac' %}">Fale com a AFR</a>
+      <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+    </div>
+
+    <a href="{% url 'atendimento' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">ATENDIMENTO<span></span></div></a>
+  </nav>
+
+<!-- Body abaixo -->
+  <section>
+	<div class="titulo-imagem">
+		<img src="{% static 'siteafr/images/reabilitacao.avif' %}" alt=" Centro de reabilitação"/>
+		<figcaption> <strong>Centro de Reabilitação</strong> </figcaption>
+	</div>
+	
+	<div class="texto">
+		<p>O Centro de Reabilitação da AFR atende pacientes de todas as idades com deficiência física e crianças com deficiência intelectual,
+			cujo quadro clínico se enquadra em uma das seguintes linhas de cuidado (patologias atendidas): <p>
+	</div>
+	
+	<div class="container1">
+		<div class="amputacao">
+			<h2> Amputação </h2>
+				<div class="amp-texto">
+					<p> Compreende as pessoas com amputações realizadas nos membros inferiores e superiores em decorrência de doenças vasculares,
+					traumatismos, diabetes, infecções, queimaduras, tumores, entre outras causas.</p>
+				</div>
+		</div>
+	</div>
+	
+	<div class="container2">	
+		<div class="reumatica">
+			<h2> Doenças Reumáticas</h2>
+				<div class="reumatica-texto">
+					<p>Compreende as pessoas com doenças que atacam os ossos, cartilagens, articulações, tendões, ligamentos e músculos, isto é, o aparelho locomotor. 
+					Os tipos mais conhecidos são: a artrose, diversas formas de artrite, a gota, a osteoporose;
+					a fibromialgia, a espondilite anquilosante, as tendinites, bursites, várias doenças que acometem a coluna vertebral e algumas doenças auto-imunes.</p>
+				</div>
+		</div>
+	</div>
+	
+	<div class="container3">	
+		<div class="ortopedica">
+			<h2> Doenças Ortopédicas</h2>
+				<div class="ortopedica-texto">
+					<p>Compreende as pessoas com doenças do sistema músculo-esquelético, que inclui ossos, músculos, ligamentos, tendões, articulações, e aos traumas.
+						Problemas ortopédicos mais comuns:. reumatísmo nos ossos, lordose, artrite reumatoide, bursite, artrose, tendinite na mão, no ombro e no pulso, escoliose, cifose e fibromialgia</p>
+				</div>
+		</div>
+	</div>
+	
+	<div class="container4">	
+		<div class="neuromuscular">
+			<h2> Doenças Neuromusculares</h2>
+				<div class="neuromuscular-texto">
+					<p>Compreende as pessoas com doenças de causa hereditária que têm origem no músculo (miopatias) ou no nervo periférico (neuropatias).
+					São exemplos de doenças neuromusculares: distrofia muscular, miopatia congênita, miotonia, amiotrofia espinhal, neuropatia hereditária,
+					ataxia, esclerose lateral amiotrófica e esclerose múltipla.</p>
+				</div>
+		</div>
+	</div>
+	
+	<div class="container5">	
+		<div class="lea">
+			<h2> Lesão Encefálica Adquirida (Infantil e Adulto)</h2>
+				<div class="lea-texto">
+					<p>Compreende as pessoas que sofreram lesões encefálicas, como traumatismo craniano-encefálico (TCE), acidente vascular encefálico (derrame),
+					infecções cerebrais, tumores, anóxias (falta de oxigênio) e Doença de Parkinson.</p>
+				</div>
+		</div>
+	</div>
+	
+	
+	<div class="container6">	
+		<div class="medular">
+			<h2> Lesão Medular</h2>
+				<div class="medular-texto">
+					<p>Compreende as pessoas paraplégicas ou tetraplégicas em função de uma lesão na medula espinhal,
+					em geral causada por acidentes de trânsito, ferimentos por arma de fogo, quedas, tumores e infecções.</p>
+				</div>
+		</div>
+	</div>
+	
+	
+	<div class="container7">	
+		<div class="congenita">
+			<h2> Má-Formação Congênita</h2>
+				<div class="congenita-texto">
+					<p>Compreende as pessoas com má-formação congênita dos membros, como displasia congênita do fêmur, e outras patologias,
+					entre elas osteogenesis imperfecta (doença dos ossos de vidro) e artrogripose múltipla congênita (articulações rígidas).</p>
+				</div>
+		</div>
+	</div>
+	
+	
+	
+	<div class="container8">	
+		<div class="mielo">
+			<h2> Mielomeningocele</h2>
+				<div class="mielo-texto">
+					<p>Compreende as pessoas com má-formação congênita da medula espinhal e da coluna vertebral, como mielomeningocele, lipomeningocele, espinha bífida oculta, agenesia da coluna lombo-sacra, entre outros.
+					Esse grupo de doenças afeta diversos órgãos e sistemas do organismo, comprometendo o funcionamento da bexiga, do intestino e dos membros inferiores.</p>
+				</div>
+		</div>
+	</div>
+	
+	
+	
+	<div class="container9">	
+		<div class="paralisia">
+			<h2> Paralisia Cerebral</h2>
+				<div class="paralisia-texto">
+					<p>Compreende as crianças que sofreram um dano cerebral antes, durante ou após o parto, causando desordens no desenvolvimento da postura e do movimento.</p>
+				</div>
+		</div>
+	</div>
+	
+	
+	<div class="container10">	
+		<div class="poliomelite">
+			<h2> Sequelas da Poliomelite</h2>
+				<div class="poliomelite-texto">
+					<p>Compreende pessoas que foram vítimas da poliomielite (paralisia infantil).
+					Ainda que, após intensas campanhas de vacinação, a doença tenha sido erradicada no Brasil em 1989, muitos pacientes possuem sequelas motoras. </p>
+				</div>
+		</div>
+	</div>
+	
+	
+	<div class="container11">	
+		<div class="intelectual">
+			<h2> Deficiência Intelectual</h2>
+				<div class="intelectual-texto">
+					<p>Compreende as crianças com deficiência intelectual (síndromes diversas, lesões cerebrais, transtorno do espectro do autismo - TEA ou suspeita de TEA, Fenilcetonúria Clássica (PKU) e Erros Inatos do Metabolismo). As causas destas limitações na inteligência são variadas e, em muitas situações, desconhecidas.
+					Além da genética, alguns dos fatores de risco são: tabagismo, alcoolismo e consumo de drogas pela mãe durante a gestação. Prematuridade, baixo peso ao nascer e desnutrição até o fim da adolescência também estão na lista. 
+					Os principais tipos de deficiência intelectual são as síndromes de Down, do X-Frágil, de Prader-Willi, de Angelman, de Williams, Alcóolica Fetal e de Rett.</p>
+				</div>
+		</div>
+	</div>
+	
+	<div class="tratamento">
+		<h2> Tratamento na AFR </h2>
+	</div>
+	
+	<div class="tratamento-texto">
+		<p>	Para identificar se o quadro do paciente corresponde às linhas de cuidado atendidas pela AFR, é feito um exame médico inicial. Se for confirmado o enquadramento, o Paciente segue para a avaliação de uma Equipe Interdisciplinar, responsável por determinar os objetivos do tratamento e o plano de terapias mais adequado para atingi-los.
+			Dessa forma, o Paciente recebe um atendimento personalizado, que considera suas necessidades, potencialidades e limitações, além do ambiente em que ele vive, as tarefas que deseja executar e a assistência recebida de seu cuidador.
+			Todo o plano terapêutico trabalha com a perspectiva da alta, de maneira que o Paciente tenha ciência das metas que serão cumpridas pelo processo de reabilitação e em que período de tempo isso deverá acontecer. </p>
+	</div>
+	
+	</section>
+	<!-- Footer abaixo -->
+	  
+	<footer class="footer">
+  <div class="footer-header">
+    <a href="#"><img src="{% static 'siteafr/images/AFRIMG4.png' %}" alt="Logo da AFR" class="logo" title="Logo da AFR" id="voltarTopo"/></a>
+    <div class="social-icons-footer">
+      <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>UNIDADES</h3>
+      <ul>
+        <li><a href="{% url 'unidadefluminense' %}">Associação Fluminense de Reabilitação</a></li>
+        <li><a href="{% url 'unidadelisaura' %}">Unidade de Reabilitação e Atendimento Especializado Lisaura Ruas</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>OUTRAS PÁGINAS</h3>
+      <ul>
+        <li><a href="{% url 'parceiroscaptacao' %}">Parceiros de Captação</a></li>
+        <li><a href="{% url 'imprensa' %}">Imprensa</a></li>
+        <li><a href="{% url 'editais' %}">Editais</a></li>
+        <li><a href="{% url 'fag' %}">Perguntas Frequentes</a></li>
+        <li><a href="{% url 'guia' %}">Guia</a></li>
+        <li><a href="{% url 'privacidade' %}">Política de Privacidade</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>COMO AJUDAR</h3>
+      <ul>
+        <li><a href="{% url 'doacao' %}" class="btn-footer"><i class="icon-red fa-solid fa-heart"></i>Fazer Doação</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>CERTIFICAÇÕES</h3>
+      <ul>
+        <li><img src="{% static 'siteafr/images/CEBASCERTIFICACAO.png' %}" class="cert"/></li>
+      </ul>
+    </div>
+  </div>
+  </footer>
+<script src="{% static 'siteafr/script.js' %}"></script>
+</body>
+
+</html>

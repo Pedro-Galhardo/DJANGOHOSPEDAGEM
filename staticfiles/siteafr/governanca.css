@@ -1,0 +1,1354 @@
+@media (min-width: 1360px){
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fcfdff;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo {
+    height: 80px;
+  }
+  
+  .slogan {
+    font-size: 14px;
+    color: #6a6a6a;
+  }
+  
+  .info-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+  }
+  
+  .info-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .info-block i {
+    color: #ee2b2b;
+    font-size: 25px;
+  }
+  
+  .social-icons a:hover{
+    color: #c62828;
+  }
+  
+  .social-icons a {
+    margin-left: 10px;
+    font-size: 18px;
+    color:#ee2b2b;
+    padding: 5px;
+    font-size: 30px;
+    transition: 0.25s ease, color 0.25s ease;
+  }
+  
+  .main-nav {
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+    padding: 0 40px;
+  }
+  .menu-toggle{
+    display: none;
+  }
+  .sidebar{
+    display: none;
+  }
+
+  .main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+  }
+
+  .main-nav li a:hover{
+    color: #c62828;
+  }
+  
+  .main-nav a {
+    display: inline-block;
+    padding: 20px 10px;
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    transition: 0.2s ease, color 0.2s ease;
+    font-size: 18px;
+  }
+
+  .dropdown{
+    position: relative;
+  }
+
+  .dropdown-menu{
+    position: absolute;
+    display: none;
+    z-index: 1000;
+    text-align: center;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: max-content;
+  }
+
+  .dropdown-menu a{
+    display: block;
+    color: #222222;
+    background: linear-gradient(135deg, #f9f9f9, #f1f1f1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .dropdown:hover .dropdown-menu{
+    display: block;
+  }
+  .dropdown-menu a:hover{
+    background-image: linear-gradient(147deg, #990000 0%, #ff0000 74%);
+    box-shadow: 0 8px 24px rgba(183, 28, 28, 0.4);
+    color: #fff !important;
+  }
+
+  .btn{
+    background-image: linear-gradient(147deg, #990000 0%, #ff0000 74%);
+    color: white !important;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.25s ease, color 0.25s ease;
+  }
+  
+  .btn:hover {
+    background-color: #c62828;
+    color: #e0e0e0;
+    background-image: linear-gradient(147deg, #730000 0%, #ba0101 74%);
+  }
+  
+  .column{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .bold{
+    font-weight: bold;
+  }
+  
+  .icon-white{
+    color: white !important;
+    font-size: 20px !important;
+    padding-right: 8px;
+  }
+
+/*Daqui para cima é o "HEADER"*/
+
+
+
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+}
+
+.banner-texto {
+  position: absolute;
+  bottom: 40px;
+  right: 100px;
+  color: #E21C21;
+  font-size: 75px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+
+/*Daqui para cima é o "BANNER"*/
+
+
+
+.fundacao-container {
+  background-color: #f8f9fb; 
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.fundacao-texto {
+  max-width: 860px;
+  color: #0a1a2f; 
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+/*Daqui para cima é o "TEXTO INICIAL"*/
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #000;
+}
+
+.diretoria {
+  background-color: #edeceb;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.diretoria-container {
+  max-width: 1000px;
+  margin-left: 420px; 
+  margin-right: auto;
+}
+
+.diretoria h2 {
+  color: #d11f1f;
+  font-weight: bold;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.diretoria-conteudo {
+  display: flex;
+  gap: 120px;
+}
+
+.coluna {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+p {
+  margin: 0;
+  font-size: 16px;
+}
+
+em {
+  font-style: italic;
+  font-weight: bold;
+  display: block;
+  margin-top: 5px;
+}
+
+
+
+
+/* Daqui para cima é "DIRETORIA"*/
+
+
+
+
+.conselho-fiscal {
+
+  width: 100%;
+  padding: 40px 0;
+}
+
+.conselho-container {
+  max-width: 1000px;
+  margin-left: 420px; 
+  margin-right: auto;
+}
+
+.conselho-container h2 {
+  color: #d11f1f;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.membros p {
+  margin: 0 0 10px 0;
+  font-size: 17px;
+  color: #1e293b; 
+  font-weight: bold;
+  line-height: 0.6; 
+}
+
+
+
+
+/*Daqui para cima é "CONSELHO FOSCAL*/
+
+
+
+
+
+.conselho-deliberativo {
+  
+  width: 100%;
+  padding: 50px 0;
+}
+
+.deliberativo-container {
+  max-width: 1000px;
+  margin-left: 420px; 
+  margin-right: auto;
+}
+
+.deliberativo-container h2 {
+  color: #d11f1f;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.deliberativo-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 700px;
+}
+
+.coluna-esquerda,
+.coluna-direita {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.coluna-esquerda p,
+.coluna-direita p {
+  margin: 0;
+  font-size: 20px;
+  color: #000;
+  line-height: 1.4;
+  
+}
+
+em {
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+
+
+/*Daqui para cima é "CONSELHO DELIBERATIVO*/
+
+
+
+
+
+.membros-suplementes {
+  
+  width: 100%;
+  padding: 50px 0;
+  
+}
+
+.membros-container {
+  max-width: 1000px;
+  margin-left: 420px;
+  margin-right: auto;
+}
+
+
+.membros-container h2 {
+ color: #d11f1f;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+
+}
+
+
+.membros-lista {
+  display: flex;
+  gap: 80px;
+
+}
+
+.coluna-membros {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.coluna-membros p {
+  font-size: 20px;
+  color: #0a1a2f;
+  margin: 0;
+  font-weight: bold;
+
+}
+
+/*Daqui para cima é "MEMBROS EFETIVOS E SUPLENTES*/
+
+
+
+.superintendencia {
+ 
+  padding: 40px 0;
+  width: 100%;
+}
+
+.superintendencia-container {
+   max-width: 1000px;
+  margin-left: 420px;
+  margin-right: auto;
+}
+
+.superintendencia-container h2 {
+  color: #d11f1f;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.superintendencia-container p {
+  color: #0a1a2f;
+  font-size: 20px;
+  font-style: italic;
+  margin: 0;
+}
+
+
+
+
+/*Daqui para cima é "SUPERENTENDENCIA"*/
+
+
+
+
+
+.estatuto {
+  padding: 0; 
+}
+
+.estatuto-container {
+  max-width: 800px; 
+  margin: 0 auto; 
+  display: flex;
+  margin-left: 420px;
+  gap: 10px;
+  align-items: center;
+  padding-bottom: 130px;
+  
+  
+  
+}
+
+.estatuto-texto {
+  width: 80%; 
+  color: #0a1a2f;
+  font-size: 16px;
+  line-height: 1.3; 
+  
+}
+
+.estatuto-texto p{
+
+    font-size: 15px;
+
+  
+}
+
+.estatuto-texto h2 {
+  font-size: 30px; 
+  color: #d11f1f;
+  font-weight: bold;
+  margin-bottom: 10px; 
+  padding-bottom: 30px;
+}
+
+.estatuto-download {
+  width: 110%; 
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+  
+
+  
+}
+
+.botao-download {
+  display: flex;
+  align-items: center;
+  background-color: #d11f1f;
+  color: white;
+  padding: 30px 30px; 
+  border-radius: 40px 0 40px 0;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 1);
+  gap: 10px; 
+  text-decoration: none;
+  
+  
+
+}
+
+.icone-paperclip {
+  font-size: 20px; 
+ 
+  color: #d11f1f;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.texto-download {
+  font-size: 20px; 
+  font-weight: bold;
+ 
+
+}
+
+
+
+
+/*Daqui para cima é "ESTATUTO SOCIAL"*/
+
+
+
+
+.footer {
+    background-color:#E21C21;
+    color: white;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+}
+  .footer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 15px;
+    border-bottom: 0.5px solid #ffffff;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 15px;
+  }
+
+  .footer-column {
+    flex: 1;
+    max-width: 300px;
+    margin: 20px 10px;
+  }
+
+  .footer-column h3 {
+    color: #ffffff;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+
+  .footer-column p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: white;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-column ul li {
+    margin: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+  }
+
+  .footer-column ul li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .footer-column ul li a:hover {
+    text-decoration: underline;
+  }
+  .btn-footer{
+    background-color: white;
+    color: #c62828 !important;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.25s ease, color 0.25s ease;
+  }
+  .btn-footer:hover{
+    background-color: #7e1d1d;
+    color: #ffffff !important;
+    text-decoration: none !important;
+
+  }
+  .icon-red{
+    color:  #ee2b2b !important;
+    font-size: 20px !important;
+    padding-right: 8px;
+  }
+  
+  .social-icons-footer a:hover{
+    color: #d3d3d3;
+  }
+  
+  .social-icons-footer a {
+    margin-left: 10px;
+    font-size: 18px;
+    color:#ffffff;
+    padding: 5px;
+    font-size: 30px;
+    transition: 0.25s ease, color 0.25s ease;
+  }
+  .cert{
+    height: 60px;
+  }
+}
+/*Daqui para cima é o "FOOTER"*/
+@media (max-width: 1360px){
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .top-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    background-color: #fcfdff;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+
+  .slogan {
+    font-size: 14px;
+    color: #6a6a6a;
+  }
+  .menu-toggle {
+  position: absolute;
+  top: 22px;
+  right: 10px;
+  z-index: 9999;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-toggle span {
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  background: #000000;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.menu-toggle span:nth-child(1) {
+  transform: translateY(-8px);
+}
+
+.menu-toggle span:nth-child(2) {
+  transform: translateY(0);
+}
+
+.menu-toggle span:nth-child(3) {
+  transform: translateY(8px);
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+  .sidebar {
+    display: none;
+    position: absolute;
+    width: 250px;
+    height: 900px;
+    background: #fff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    padding-top: 10px;
+  }
+  .underline-none{
+    text-decoration: none;
+    color: #000000;
+  }
+
+  .sidebar.active {
+    display: block;
+    right: 0;
+  }
+
+  .menu-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: #f9f9f9;
+    padding-left: 20px;
+  }
+
+  .submenu a {
+    display: block;
+    padding: 10px 0;
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .menu-item.open + .submenu {
+    max-height: 200px;
+  }
+
+  .info-container {
+    display: none;
+    align-items: flex-start;
+    gap: 32px;
+  }
+  
+  .info-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .info-block i {
+    color: #ee2b2b;
+    font-size: 25px;
+  }
+  
+  .social-icons a:hover{
+    color: #c62828;
+  }
+  
+  .social-icons a {
+    margin-left: 10px;
+    font-size: 18px;
+    color:#ee2b2b;
+    padding: 5px;
+    font-size: 30px;
+    transition: 0.25s ease, color 0.25s ease;
+  }
+  
+  .main-nav {
+    display: none;
+  }
+
+  .main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+  }
+
+  .main-nav li a:hover{
+    color: #c62828;
+  }
+  
+  .main-nav a {
+    display: inline-block;
+    padding: 20px 10px;
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    transition: 0.2s ease, color 0.2s ease;
+    font-size: 18px;
+  }
+
+  .dropdown{
+    position: relative;
+  }
+
+  .dropdown-menu{
+    position: absolute;
+    display: none;
+    z-index: 1000;
+    text-align: center;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: max-content;
+  }
+
+  .dropdown-menu a{
+    display: block;
+    color: #222222;
+    background: linear-gradient(135deg, #f9f9f9, #f1f1f1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .dropdown:hover .dropdown-menu{
+    display: block;
+  }
+  .dropdown-menu a:hover{
+    background-image: linear-gradient(147deg, #990000 0%, #ff0000 74%);
+    box-shadow: 0 8px 24px rgba(183, 28, 28, 0.4);
+    color: #fff !important;
+  }
+
+  .btn{
+    background-image: linear-gradient(147deg, #990000 0%, #ff0000 74%);
+    color: white !important;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.25s ease, color 0.25s ease;
+  }
+  
+  .btn:hover {
+    background-color: #c62828;
+    color: #e0e0e0;
+    background-image: linear-gradient(147deg, #730000 0%, #ba0101 74%);
+  }
+  
+  .column{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .bold{
+    font-weight: bold;
+  }
+  
+  .icon-white{
+    color: white !important;
+    font-size: 20px !important;
+    padding-right: 8px;
+  }
+
+/*Daqui para cima é o "HEADER"*/
+
+
+
+
+
+
+/*Daqui para cima é o "BANNER"*/
+
+
+
+.fundacao-container {
+  background-color: #f8f9fb; 
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.fundacao-texto {
+  max-width: 860px;
+  color: #0a1a2f; 
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+/*Daqui para cima é o "TEXTO INICIAL"*/
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #000;
+}
+
+.diretoria {
+  background-color: #edeceb;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.diretoria-container {
+  max-width: 1000px;
+  margin-left: 420px; 
+  margin-right: auto;
+}
+
+.diretoria h2 {
+  color: #d11f1f;
+  font-weight: bold;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.diretoria-conteudo {
+  display: flex;
+  gap: 120px;
+}
+
+.coluna {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+p {
+  margin: 0;
+  font-size: 16px;
+}
+
+em {
+  font-style: italic;
+  font-weight: bold;
+  display: block;
+  margin-top: 5px;
+}
+
+
+
+
+/* Daqui para cima é "DIRETORIA"*/
+
+
+
+
+.conselho-fiscal {
+
+  width: 100%;
+  padding: 40px 0;
+}
+
+.conselho-container {
+  max-width: 1000px;
+  margin-left: 420px; 
+  margin-right: auto;
+}
+
+.conselho-container h2 {
+  color: #d11f1f;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.membros p {
+  margin: 0 0 10px 0;
+  font-size: 17px;
+  color: #1e293b; 
+  font-weight: bold;
+  line-height: 0.6; 
+}
+
+
+
+
+/*Daqui para cima é "CONSELHO FOSCAL*/
+
+
+
+
+
+.conselho-deliberativo {
+  
+  width: 100%;
+  padding: 50px 0;
+}
+
+.deliberativo-container {
+  max-width: 1000px;
+  margin-left: 420px; 
+  margin-right: auto;
+}
+
+.deliberativo-container h2 {
+  color: #d11f1f;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.deliberativo-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 700px;
+}
+
+.coluna-esquerda,
+.coluna-direita {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.coluna-esquerda p,
+.coluna-direita p {
+  margin: 0;
+  font-size: 20px;
+  color: #000;
+  line-height: 1.4;
+  
+}
+
+em {
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+
+
+/*Daqui para cima é "CONSELHO DELIBERATIVO*/
+
+
+
+
+
+.membros-suplementes {
+  
+  width: 100%;
+  padding: 50px 0;
+  
+}
+
+.membros-container {
+  max-width: 1000px;
+  margin-left: 420px;
+  margin-right: auto;
+}
+
+
+.membros-container h2 {
+ color: #d11f1f;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+
+}
+
+
+.membros-lista {
+  display: flex;
+  gap: 80px;
+
+}
+
+.coluna-membros {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.coluna-membros p {
+  font-size: 20px;
+  color: #0a1a2f;
+  margin: 0;
+  font-weight: bold;
+
+}
+
+/*Daqui para cima é "MEMBROS EFETIVOS E SUPLENTES*/
+
+
+
+.superintendencia {
+ 
+  padding: 40px 0;
+  width: 100%;
+}
+
+.superintendencia-container {
+   max-width: 1000px;
+  margin-left: 420px;
+  margin-right: auto;
+}
+
+.superintendencia-container h2 {
+  color: #d11f1f;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.superintendencia-container p {
+  color: #0a1a2f;
+  font-size: 20px;
+  font-style: italic;
+  margin: 0;
+}
+
+
+
+
+/*Daqui para cima é "SUPERENTENDENCIA"*/
+
+
+
+
+
+.estatuto {
+  padding: 0; 
+}
+
+.estatuto-container {
+  max-width: 800px; 
+  margin: 0 auto; 
+  display: flex;
+  margin-left: 420px;
+  gap: 10px;
+  align-items: center;
+  padding-bottom: 130px;
+  
+  
+  
+}
+
+.estatuto-texto {
+  width: 80%; 
+  color: #0a1a2f;
+  font-size: 16px;
+  line-height: 1.3; 
+  
+}
+
+.estatuto-texto p{
+
+    font-size: 15px;
+
+  
+}
+
+.estatuto-texto h2 {
+  font-size: 30px; 
+  color: #d11f1f;
+  font-weight: bold;
+  margin-bottom: 10px; 
+  padding-bottom: 30px;
+}
+
+.estatuto-download {
+  width: 110%; 
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+  
+
+  
+}
+
+.botao-download {
+  display: flex;
+  align-items: center;
+  background-color: #d11f1f;
+  color: white;
+  padding: 30px 30px; 
+  border-radius: 40px 0 40px 0;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 1);
+  gap: 10px; 
+  text-decoration: none;
+  
+  
+
+}
+
+.icone-paperclip {
+  font-size: 20px; 
+ 
+  color: #d11f1f;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.texto-download {
+  font-size: 20px; 
+  font-weight: bold;
+ 
+
+}
+
+.banner{
+  display: none;
+}
+
+
+/*Daqui para cima é "ESTATUTO SOCIAL"*/
+
+
+
+
+.footer {
+    background-color:#E21C21;
+    color: white;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+}
+  .footer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 15px;
+    border-bottom: 0.5px solid #ffffff;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 15px;
+  }
+
+  .footer-column {
+    flex: 1;
+    max-width: 300px;
+    margin: 20px 10px;
+  }
+
+  .footer-column h3 {
+    color: #ffffff;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+
+  .footer-column p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: white;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-column ul li {
+    margin: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+  }
+
+  .footer-column ul li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .footer-column ul li a:hover {
+    text-decoration: underline;
+  }
+  .btn-footer{
+    background-color: white;
+    color: #c62828 !important;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.25s ease, color 0.25s ease;
+    width: 150px;
+  }
+  .btn-footer:hover{
+    background-color: #7e1d1d;
+    color: #ffffff !important;
+    text-decoration: none !important;
+
+  }
+  .icon-red{
+    color:  #ee2b2b !important;
+    font-size: 20px !important;
+    padding-right: 8px;
+  }
+  
+  .social-icons-footer a:hover{
+    color: #d3d3d3;
+  }
+  
+  .social-icons-footer a {
+    margin-left: 10px;
+    font-size: 18px;
+    color:#ffffff;
+    padding: 5px;
+    font-size: 30px;
+    transition: 0.25s ease, color 0.25s ease;
+  }
+  .cert{
+    height: 60px;
+  }
+}

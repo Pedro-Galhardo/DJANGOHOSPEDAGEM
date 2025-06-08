@@ -1,0 +1,314 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFR - Política de Privacidade | Brasil</title>
+  <link rel="stylesheet" href= {% static 'siteafr/privacidade.css' %} />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header class="top-header">
+    <div class="logo-container">
+      <a href="{% url 'index' %}"><img src="{% static 'siteafr/images/logo.jpg' %}" alt="Logo da AFR" class="logo" title="Logo da AFR"/></a>
+    </div>
+    <div class="info-container">
+      <div class="info-block">
+        <i class="icons fa-solid fa-location-dot"></i>
+        <div class="column">
+          <span class="bold">Niterói, RJ</span>
+          <span>Rua Lopes Trovão, 301</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-envelope"></i>
+        <div class="column">
+          <span class="bold">afr@afr.org.br</span>
+          <span>Atendimento: 07:00 - 19:00</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-mobile-screen-button"></i>
+        <div class="column">
+          <span class="bold">(21) 2109-2626</span>
+          <span>Fale conosco!</span>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div class="info-block">
+        <a href="{% url 'doacao' %}" class="btn"><i class="icon-white fa-solid fa-heart"></i>Fazer Doação</a>
+      </div>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <nav class="main-nav">
+    <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Sobre</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'nossahistoria' %}">Nossa História</a>
+          <a href="{% url 'governanca' %}">Governança</a>
+          <a href="{% url 'transparencia' %}">Transparência e prestação de contas</a>
+          <a href="{% url 'certificacoes' %}">Certificações</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Área de atuação</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+          <a href="{% url 'depmedico' %}">Departamento Médico</a>
+          <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+          <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Contato</a>
+        <div class="dropdown-menu">
+            <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+            <a href="{% url 'voluntariado' %}">Voluntariado</a>
+            <a href="{% url 'sac' %}">Fale com a AFR</a>
+            <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+            <a href="{% url 'visita' %}">Faça uma visita</a>
+        </div>
+      </li>
+      <li><a href="{% url 'atendimento' %}">Atendimento</a></li>
+    </ul>
+  </nav>
+  <nav class="sidebar" id="sidebar">
+       <a href="{% url 'index' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">HOME<span></span></div></a>
+    <div class="menu-item" onclick="toggleSubmenu(this)">SOBRE<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'nossahistoria' %}">Nossa História</a>
+      <a href="{% url 'governanca' %}">Governança</a>
+      <a href="{% url 'transparencia' %}">Prestação de contas</a>
+      <a href="{% url 'certificacoes' %}">Certificações</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">ÁREA DE ATUAÇÃO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+      <a href="{% url 'depmedico' %}">Departamento Médico</a>
+      <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+      <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">CONTATO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'visita' %}">Faça uma visita</a>
+      <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+      <a href="{% url 'voluntariado' %}">Voluntariado</a>
+      <a href="{% url 'sac' %}">Fale com a AFR</a>
+      <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+    </div>
+
+    <a href="{% url 'atendimento' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">ATENDIMENTO<span></span></div></a>
+  </nav>
+
+
+
+
+
+<div class="container">
+    <h1 class="titulo">Resumo da Política de Privacidade</h1>
+
+    <div class="bloco">
+      <div class="texto">
+        A AFR desenvolveu esta Política de Privacidade para informá-lo sobre o uso e divulgação de informações pessoais (como seu nome, endereço, e-mail, telefone, etc.) fornecidas ao se cadastrar no site.<br>
+        A AFR não registra suas informações pessoais, a não ser que você as forneça voluntariamente por meio do cadastramento no site.
+      </div>
+    </div>
+
+    <div class="bloco">
+      <h2 class="subtitulo">Uso das informações</h2>
+      <div class="texto">
+        A AFR usa suas informações pessoais para adequar o site às suas preferências, para prover os serviços solicitados por você e enviar-lhe informações sobre produtos e serviços. Ao se cadastrar na AFR, você pode optar em receber determinadas informações por e-mail/
+       whatsapp.<br>
+        A AFR não venderá suas informações pessoais a terceiros ou as utilizará sem a sua prévia autorização.
+      </div>
+    </div>
+
+    <div class="bloco">
+      <h2 class="subtitulo">Como nós protegeremos suas informações pessoais</h2>
+      <div class="texto">
+        A AFR emprega medidas técnicas de segurança para proteger suas informações pessoais. Todavia, nenhuma transmissão pela Internet pode ser garantida como completamente segura. Consequentemente, a AFR, suas empresas parceiras e afins, terceiros, provedores de serviços e seus respectivos escritórios, diretores, empregados e agentes não representam, autorizam ou garantem que informações pessoais estarão protegidas contra invasão de "hackers".
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <div class="container">
+    <div class="titulo">Política de Privacidade</div>
+    <div class="texto">
+       O presente documento estabelece regras sobre a obtenção, uso, armazenamento dos dados e informações coletadas dos Usuários, bem como as regras de utilização dos serviços disponíveis no site da AFR. Ao aceitar os termos de uso, o Usuário reconhece ter lido, entendido e concordado, plenamente e sem ressalvas, com todas as condições aqui estabelecidas.
+
+São considerados Usuários todos aqueles civilmente capazes, maiores de 18 anos, que de forma voluntária, inserem seus dados no site da AFR para receber informações ou fazer doações financeiras para a AFR. São considerados Visitantes aqueles que têm acesso à visualização das atividades oferecidas pela AFR, porém não efetuam o cadastro. São considerados Apoiadores os websites que dão suporte, direcionamento e auxiliam a AFR, principalmente na gestão de arrecadação de doações.
+
+O Usuário não poderá difundir, transmitir ou colocar à disposição de terceiros qualquer tipo de informação, elemento ou conteúdo deste website que implique em violação ao sigilo das comunicações e a privacidade. Ainda que o Usuário deixe de utilizar a plataforma web da AFR para doação, a AFR poderá permanecer com o registro de dados e informações do Usuário, pelo período máximo de 5 (cinco) anos, para fins de auditoria e preservação de direitos, com a faculdade de excluí-los definitivamente por seu exclusivo critério.
+
+O site www.afr.org.br é mantido pela AFR e seu conteúdo destina-se a todas as pessoas que queriam mais informações sobre Terapias de Reabilitação e Medicina Física, Reciclagem Profissional, Estágios, Programa de Bolsa de Aperfeiçoamento Profissional, Cursos e Pesquisas de Prevalência de Incapacidades,  incluindo pacientes, familiares, profissionais de saúde, estudantes, doadores, parceiros, imprensa, governo e sociedade. O conteúdo é produzido e gerenciado pela Equipe de Marketing e Comunicação, respaldado pelo crivo de profissionais de saúde e outros especialistas, visando dar credibilidade e autenticidade às informações divulgadas. Nenhuma imagem de paciente pode ser divulgada sem a permissão expressa, por escrito, da AFR e do responsável legal pelo menor.
+
+As informações contidas neste site não devem substituir os tratamentos de reabilitação realizados por um profissional de saúde.
+
+Antes de seguir qualquer eventual orientação encontrada neste website, o usuário e seus familiares devem sempre consultar um médico.
+
+
+
+COLETA E USO DE INFORMAÇÕES
+
+
+
+A coleta de dados pessoais é necessária para que a oferta de serviços e funcionalidades adequados às necessidades dos Usuários, bem como para personalizar serviços, fazendo com que sua experiência seja a mais satisfatória possível.
+
+        Quando o dado coletado for de menores de idade é imprescindível a obtenção do consentimento inequívoco e informado de um dos pais. Os referidos dados serão protegidos e atenderão à necessidade de privacidade da criança.
+Em atendimentos presenciais, para dar entrada a solicitações e atendimentos, é necessário, igualmente, o fornecimento de dados pessoais, que serão coletados por um atendente responsável, que realizará o registro das informações em sistema cadastral.
+
+        Os dados pessoais solicitados devem ser informados para que seja possível dar sequência ao seu pedido ou atendimento. Outros dados pessoais e dados pessoais sensíveis poderão ser solicitados, em seguida, de acordo com o atendimento selecionado.
+Os dados fornecidos pelo Usuário no site da AFR não serão divulgados para terceiros. A AFR somente divulgará as informações ou dados pessoais que estiverem sob seu poder, caso exista consentimento expresso do Usuário ou por determinação legal ou judicial que expressamente a obrigue. A AFR se reserva o direito de utilizar os dados fornecidos pelo Usuário para efeito de: pesquisas; contato para fins institucionais de informar sobre questões relativas a doação, sobre seus serviços e sobre a AFR; informar resultados de projetos beneficiados por doação e outros pertinentes as atividades da AFR. Os dados e informações coletados estarão armazenados em ambiente seguro, observado o estado da técnica disponível, e somente poderão ser acessadas por pessoas qualificadas e autorizadas pela AFR.
+
+A AFR se exime de quaisquer responsabilidades por eventuais danos e/ou prejuízos decorrentes de falhas, vírus ou invasões do banco de dados no site da AFR. Para acesso a “links” para outros sites, incluindo os sites dos Apoiadores, recomenda-se ao Usuário consultar as respectivas “Politicas de Uso” e “Termos de Privacidade” de tais sites, bem como quaisquer outros regulamentos específicos de cada um deles. O Usuário tem ciência e declara que é de sua inteira responsabilidade prestar informações verdadeiras, não cabendo a AFR verificar a precisão dos dados transmitidos pelo Usuário.
+
+O Usuário tem ciência e concorda expressamente que a AFR pode coletar informações para realização de acompanhamento de trafego no site, com intuito de identificar grupos de perfil de usuários e para fins de orientação publicitária.
+
+
+
+COOKIES
+
+Este portal não utiliza cookies que contenham seus dados pessoais. Podemos utilizar cookies apenas para identificá-lo como um visitante único, mas anônimo ao site, de forma que nos ajude a entender como os visitantes utilizam o site, permitindo a melhoria de sua estrutura e funcionalidades. Os cookies não coletam informações que permitem tornar você pessoalmente identificável.
+
+
+GOOGLE ANALYTICS
+
+Este site utiliza o Google Analytics, uma ferramenta identifica como os visitantes interagem e navegam pelas páginas.
+A coleta se restringe aos dados de navegação, como páginas visitadas e tempo de permanência, sem identificar informações pessoais, como nome, e-mail ou telefone dos visitantes.
+
+
+DOAÇÕES
+
+As doações serão utilizadas exclusivamente nos projetos assistenciais, para a continuidade dos serviços e manutenção da Instituição. As doações serão finalizadas e concluídas após o devido pagamento, a ser feito por meio de empresa responsável pela gestão de pagamentos. A doação será efetuada em caráter irrevogável e irretratável.
+
+
+DIREITO DE PROPRIEDADE, SERVIÇOS DISPONIBILIZADOS E SEGURANÇA
+
+
+Todas as informações, dados, conteúdo, desenhos, ilustrações contidas no site são de propriedade da AFR, portanto, não poderão ser modificadas, reproduzidas, extraídas ou de qualquer forma utilizadas sem a prévia e expressa autorização, por escrito, por parte da AFR. Desta forma, ao acessar o website, o Usuário fica ciente que a utilização indevida das informações aqui contidas pode acarretar sanções civis e criminais.
+
+
+
+A fim de potencializar a segurança no site, a AFR enfatiza que determinados atos, incluindo, entre outros, o uso com propósitos ilegais, informações ou corrupção de dados, violação de direitos intelectuais ou de autoria, envio de mensagens ameaçadoras, conteúdo racista ou pornográfico, interferência ou interrupção dos serviços prestados pelo site e/ou qualquer tentativa de espalhar quaisquer vírus ou programas indesejáveis poderá resultar na rescisão imediata de qualquer relação entre a AFR e o USUÁRIO, sem prejuízo das cominações legais cabíveis.
+
+O Usuário concorda que não utilizará da AFR para desempenhar qualquer atividade vedada por lei.
+
+A AFR reserva-se o direito de coibir a conduta, informações ou conteúdos que considere, por seu exclusivo e absoluto julgamento, violar qualquer lei ou que seja nociva aos usuários individuais, as empresas e/ou terceiros que estão cadastrados no site.
+
+
+
+CONSERVAÇÃO DE DADOS PESSOAIS
+
+
+
+Os dados são conservados pelo período estritamente necessário para cada uma das finalidades descritas acima e/ou de acordo com prazos legais vigentes. Em caso de litígio pendente, os dados podem ser conservados até trânsito em julgado da decisão.
+
+Adicionalmente, a AFR afirma que manterá em funcionamento todos os meios técnicos ao seu alcance para evitar a perda, má utilização, alteração, acesso não autorizado e apropriação indevida dos dados pessoais de seus usuários, pacientes e clientes. Em qualquer caso, note-se que, circulando os dados em rede internet aberta, não é possível eliminar totalmente o risco de acesso e utilização não autorizados, pelo que o usuário deverá programar medidas de segurança adequadas para a navegação no website.
+
+
+
+DIREITOS DOS USUÁRIOS
+
+
+
+Nos termos da legislação aplicável, o titular do dado poderá a qualquer tempo solicitar o acesso aos dados que lhe digam respeito, bem como a sua retificação, eliminação ou a limitação de uso do dado pessoal, a portabilidade dos seus dados, ou ainda opor-se ao seu tratamento, exceto nos casos previstos em lei. Poderá exercer estes direitos mediante pedido escrito dirigido ao e-mail: afrmkt@afr.org.br
+
+
+
+RECLAMAÇÕES E DÚVIDAS
+
+
+
+Caso tenha qualquer dúvida relacionada com o tratamento dos seus dados pessoais e com os direitos que lhe são conferidos pela legislação aplicável e, em especial, referidos nessa Política, poderá contactar a AFR através do e-mail: afrmkt@afr.org.br
+
+
+
+O usuário tem ainda o direito de apresentar uma reclamação à Autoridade Nacional de Proteção de Dados conforme previsto em lei.
+
+
+
+
+
+DISPOSIÇÕES GERAIS
+
+Na hipótese de qualquer cláusula, termo ou disposição deste Termo ser declarada nula, tal nulidade não afetará quaisquer outras cláusulas, termos ou disposições aqui contidas, as quais deverão permanecer em pleno vigor e efeito.
+
+A AFR se reserva o direito de alterar unilateralmente quaisquer condições do presente Termo de Uso, sem que haja necessidade de informação prévia ao Usuário. Fica eleito para dirimir quaisquer dúvidas e solucionar conflitos oriundos do presente Termo, o Foro de Niterói - RJ, com renúncia a qualquer outro, por mais privilegiado que seja.
+
+​
+
+​
+    </div>
+  </div>
+
+
+
+
+ <footer class="footer">
+  <div class="footer-header">
+    <a href="#"><img src="{% static 'siteafr/images/AFRIMG4.png' %}" alt="Logo da AFR" class="logo" title="Logo da AFR" id="voltarTopo"/></a>
+    <div class="social-icons-footer">
+      <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>UNIDADES</h3>
+      <ul>
+        <li><a href="{% url 'unidadefluminense' %}">Associação Fluminense de Reabilitação</a></li>
+        <li><a href="{% url 'unidadelisaura' %}">Unidade de Reabilitação e Atendimento Especializado Lisaura Ruas</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>OUTRAS PÁGINAS</h3>
+      <ul>
+        <li><a href="{% url 'parceiroscaptacao' %}">Parceiros de Captação</a></li>
+        <li><a href="{% url 'imprensa' %}">Imprensa</a></li>
+        <li><a href="{% url 'editais' %}">Editais</a></li>
+        <li><a href="{% url 'fag' %}">Perguntas Frequentes</a></li>
+        <li><a href="{% url 'guia' %}">Guia</a></li>
+        <li><a href="{% url 'privacidade' %}">Política de Privacidade</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>COMO AJUDAR</h3>
+      <ul>
+        <li><a href="{% url 'doacao' %}" class="btn-footer"><i class="icon-red fa-solid fa-heart"></i>Fazer Doação</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>CERTIFICAÇÕES</h3>
+      <ul>
+        <li><img src="{% static 'siteafr/images/CEBASCERTIFICACAO.png' %}" class="cert"/></li>
+      </ul>
+    </div>
+  </div>
+  </footer>
+<script src="{% static 'siteafr/script.js' %}"></script>
+</body>
+
+
+</html>

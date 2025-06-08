@@ -1,0 +1,349 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFR - Atendimento | Brasil</title>
+  <link rel="stylesheet" href= {% static 'siteafr/atendimento.css' %} />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <header class="top-header">
+    <div class="logo-container">
+      <a href="{% url 'index' %}"><img src="{% static 'siteafr/images/logo.jpg' %}" alt="Logo da AFR" class="logo" title="Logo da AFR"/></a>
+    </div>
+    <div class="info-container">
+      <div class="info-block">
+        <i class="icons fa-solid fa-location-dot"></i>
+        <div class="column">
+          <span class="bold">Niterói, RJ</span>
+          <span>Rua Lopes Trovão, 301</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-envelope"></i>
+        <div class="column">
+          <span class="bold">afr@afr.org.br</span>
+          <span>Atendimento: 07:00 - 19:00</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-mobile-screen-button"></i>
+        <div class="column">
+          <span class="bold">(21) 2109-2626</span>
+          <span>Fale conosco!</span>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div class="info-block">
+        <a href="{% url 'doacao' %}" class="btn"><i class="icon-white fa-solid fa-heart"></i>Fazer Doação</a>
+      </div>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <nav class="main-nav">
+    <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Sobre</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'nossahistoria' %}">Nossa História</a>
+          <a href="{% url 'governanca' %}">Governança</a>
+          <a href="{% url 'transparencia' %}">Transparência e prestação de contas</a>
+          <a href="{% url 'certificacoes' %}">Certificações</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Área de atuação</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+          <a href="{% url 'depmedico' %}">Departamento Médico</a>
+          <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+          <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Contato</a>
+        <div class="dropdown-menu">
+            <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+            <a href="{% url 'voluntariado' %}">Voluntariado</a>
+            <a href="{% url 'sac' %}">Fale com a AFR</a>
+            <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+            <a href="{% url 'visita' %}">Faça uma visita</a>
+        </div>
+      </li>
+      <li><a href="{% url 'atendimento' %}">Atendimento</a></li>
+    </ul>
+  </nav>
+  <nav class="sidebar" id="sidebar">
+       <a href="{% url 'index' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">HOME<span></span></div></a>
+    <div class="menu-item" onclick="toggleSubmenu(this)">SOBRE<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'nossahistoria' %}">Nossa História</a>
+      <a href="{% url 'governanca' %}">Governança</a>
+      <a href="{% url 'transparencia' %}">Prestação de contas</a>
+      <a href="{% url 'certificacoes' %}">Certificações</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">ÁREA DE ATUAÇÃO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+      <a href="{% url 'index' %}">Departamento Médico</a>
+      <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+      <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">CONTATO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'visita' %}">Faça uma visita</a>
+      <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+      <a href="{% url 'voluntariado' %}">Voluntariado</a>
+      <a href="{% url 'sac' %}">Fale com a AFR</a>
+      <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+    </div>
+
+    <a href="{% url 'atendimento' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">ATENDIMENTO<span></span></div></a>
+  </nav>
+  <!-- Header inteiro daqui até o início do header -->
+	<div class="titulo-imagem">
+		<img src="{% static 'siteafr/images/atendimentobanner.avif' %}" alt="Atendimento"/>
+		<figcaption> <strong>Atendimento</strong> </figcaption>
+	</div>
+    <div class="text-atd">
+        <div class="div-atd">
+            <div class="sus">
+             <h2>SUS</h2>
+                <button class="btn-sus" onclick="openPopup('sus')">Como ser atendido</button>
+            </div>
+            <div class="sus">
+                <h2>PLANOS DE SAÚDE OU PARTICULAR</h2>
+                <button class="btn-sus" onclick="openPopup('particular')">Como ser atendido</button>
+            </div>
+        </div>
+    </div>
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+    <div class="popup" id="popup-sus">
+        <h3>ATENDIMENTO PELO SUS</h3>
+        <p>Consulte abaixo como ser atendido pela AFR, via SUS, de acordo com a área de atendimento:</p>
+        <p><strong>OFICINA DE REABILITAÇÃO</strong></p>
+
+        <p><strong>1)</strong> Dirija-se à Unidade Básica de Saúde mais próximo de sua residência para uma consulta médica</p>
+
+        <p><strong>2)</strong> De acordo com o diagnóstico, o médico fará a indicação de Reabilitação Física ou Intelectual</p>
+
+        <p><strong>3)</strong> O Paciente será incluído no Sistema de Regulação gerido pela Secretaria Municipal de Saúde de Niterói</p>
+
+<p><strong>4)</strong> O Paciente será contatado para a confirmação da consulta. Na data agendada, será realizada uma avaliação, cujo objetivo é verificar se o caso corresponde às patologias atendidas pela AFR.</p>
+
+ 
+
+<p>Em caso de enquadramento, o Paciente segue para a definição do plano de tratamento terapêutico</p>
+<p><strong>OFICINA ORTOPÉDICA</strong></p>
+
+<p><strong>1)</strong> Dirija-se à Unidade Básica de Saúde mais próximo de sua residência para uma consulta</p>
+
+ 
+
+<p><strong>2)</strong> De acordo com o diagnóstico, o médico fará a indicação do produto ortopédico e  a Unidade Básica de Saúde o encaminhamento à Regulação Municipal</p>
+
+ 
+
+<p><strong>3)</strong> O Paciente será incluído no Sistema de Regulação, gerido pela Secretaria Municipal de Saúde de Niterói</p>
+
+<p><strong>4)</strong> O Paciente será contatado para a confirmação da data do atendimento</p>
+
+ <p><strong>AFR não possui acesso às informações sobre o tempo de espera ou a posição do paciente na fila da Secretaria Municipal de Saúde de Niterói</strong></p>
+        <button class="close-btn" onclick="closePopup()">Fechar</button>
+    </div>
+    <div class="popup" id="popup-particular">
+        <h3>ATENDIMENTO PELO PLANO-SAÚDE OU PARTICULAR</h3>
+        <p>Consulte abaixo como ser atendido pela AFR via planos de saúde ou particular:</p>
+        <p><strong>OFICINA DE REABILITAÇÃO</strong></p>
+        <p>Para agendar atendimento, ligue para +55 (21) 2109-2626, de segunda a sexta-feira, das 7h às 19h</p>
+        <div class="central">
+            <div class="contact-box">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+55 (21) 2109-2626</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>De segunda a sexta-feira, das 7h às 19h</span>
+                </div>
+            </div>
+        </div>
+        <p><strong>OFICINA ORTOPÉDICA</strong></p>
+        <p>Para agendar atendimento, ligue para +55 (21) 2109-2626, de segunda a sexta-feira, das 7h às 17h</p>
+        <div class="central">
+            <div class="contact-box">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+55 (21) 2109-2626</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>De segunda a sexta-feira, das 7h às 17h</span>
+                </div>
+            </div>
+        </div>
+        <button class="close-btn" onclick="closePopup()">Fechar</button>
+    </div>
+    <div class="text-atd" id="planos">
+      <p>A AFR mantém convênio com os principais <strong>planos de saúde</strong> no Brasil
+para a prestação de diversos serviços:</p>
+    </div>
+      <h1>OPERADORAS</h1>
+      <div class="grid">
+        <div class="card">ASSEFAZ*</div>
+        <div class="card">B. BRASIL*</div>
+        <div class="card">BNDES*</div>
+        <div class="card">CABERJ*</div>
+        <div class="card">CAPESAÚDE*</div>
+        <div class="card">CORREIOS*</div>
+        <div class="card">FIO CRUZ*</div>
+        <div class="card">FUNCEF*</div>
+        <div class="card">INTERMÉDICA</div>
+        <div class="card">INTEGRAL SAÚDE</div>
+        <div class="card">MIN. DA MARINHA</div>
+        <div class="card">MIN. DO EXÉRCITO*</div>
+        <div class="card">MIN. DA AERONÁUTICA*</div>
+        <div class="card">MÚTUA*</div>
+        <div class="card">PETROBRAS DISTRIBUIDORA*</div>
+        <div class="card">PETROBRAS*</div>
+        <div class="card">PETROBRAS-PAE</div>
+        <div class="card">REAL GRANDEZA*</div>
+        <div class="card">URANOS/CNEN*</div>
+        <div class="card">VALE/PASA</div>
+        <div class="card">CAMARJ</div>
+        <div class="card">CAREPLUS</div>
+        <div class="card">TRANSPETRO</div>
+      </div>
+      <div class="text-atd" id="especialidades">
+      <p>Consulte abaixo as <strong>especialidades</strong> atendidas na AFR:</p>
+    </div>
+      <div class="container">
+    <div class="top-box">
+      <div>
+        <h3>Especialidades médicas:</h3>
+        <ul>
+          <li>Fisiatria</li>
+          <li>Geriatria</li>
+          <li>Neurofisiatria</li>
+          <li>Ortopedia</li>
+          <li>Psiquiatria</li>
+          <li>Reumatologia</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Especialidades não médicas:</h3>
+        <ul>
+          <li>Enfermagem</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <h3>Especialidades terapêuticas:</h3>
+      <div class="columns">
+        <div class="column">
+          <ul>
+            <li>Baropodometria Computadorizada</li>
+            <li>Departamento Médico</li>
+            <li>Drenagem Linfática</li>
+            <li>Eletroterapia</li>
+            <li>Fisioterapia Dermato-funcional</li>
+            <li>Fisioterapia Geral</li>
+            <li>Fisioterapia Pediátrica</li>
+            <li>Fisioterapia Respiratória</li>
+            <li>Fisioterapia Pélvica</li>
+            <li>Fonoaudiologia Geral</li>
+            <li>Fonoaudiologia Pediátrica</li>
+            <li>Massoterapia</li>
+          </ul>
+        </div>
+        <div class="column">
+          <ul>
+            <li>Neuropsicopedagogia</li>
+            <li>Pilates</li>
+            <li>Prova de Função Pulmonar (Espirometria)</li>
+            <li>Psicologia Geral</li>
+            <li>Psicologia Pediátrica</li>
+            <li>Psicomotricidade</li>
+            <li>RPG</li>
+            <li>Serviço Social</li>
+            <li>Terapia Ocupacional</li>
+          </ul>
+        </div>
+        <div class="column">
+          <ul>
+            <li><strong>Terapias Integradas:</strong></li>
+            <ul>
+              <li>Terapeuta Ocupacional</li>
+              <li>Fonoaudiologia Pediátrica</li>
+              <li>Psicologia Pediátrica</li>
+              <li>Assistente Social</li>
+            </ul>
+            <li><strong>Programa Reintegrar:</strong></li>
+            <ul>
+              <li>Fisioterapia</li>
+              <li>Fonoaudiologia</li>
+              <li>Terapeuta Ocupacional</li>
+              <li>Psicólogo</li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer daqui até fechar o footer -->
+  <footer class="footer">
+  <div class="footer-header">
+    <a href="#"><img src="{% static 'siteafr/images/AFRIMG4.png' %}" alt="Logo da AFR" class="logo" title="Logo da AFR" id="voltarTopo"/></a>
+    <div class="social-icons-footer">
+      <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>UNIDADES</h3>
+      <ul>
+        <li><a href="{% url 'unidadefluminense' %}">Associação Fluminense de Reabilitação</a></li>
+        <li><a href="{% url 'unidadelisaura' %}">Unidade de Reabilitação e Atendimento Especializado Lisaura Ruas</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>OUTRAS PÁGINAS</h3>
+      <ul>
+        <li><a href="{% url 'parceiroscaptacao' %}">Parceiros de Captação</a></li>
+        <li><a href="{% url 'imprensa' %}">Imprensa</a></li>
+        <li><a href="{% url 'editais' %}">Editais</a></li>
+        <li><a href="{% url 'fag' %}">Perguntas Frequentes</a></li>
+        <li><a href="{% url 'guia' %}">Guia</a></li>
+        <li><a href="{% url 'privacidade' %}">Política de Privacidade</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>COMO AJUDAR</h3>
+      <ul>
+        <li><a href="{% url 'doacao' %}" class="btn-footer"><i class="icon-red fa-solid fa-heart"></i>Fazer Doação</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>CERTIFICAÇÕES</h3>
+      <ul>
+        <li><img src="{% static 'siteafr/images/CEBASCERTIFICACAO.png' %}" class="cert"/></li>
+      </ul>
+    </div>
+  </div>
+  </footer>
+<script src="{% static 'siteafr/atendimento.js' %}"></script>
+</body>
+</html>

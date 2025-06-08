@@ -1,0 +1,321 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFR - Nossa História | Brasil</title>
+  <link rel="stylesheet" href="{% static 'siteafr/nossahistoria.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+
+
+
+
+
+<body>
+   <header class="top-header">
+    <div class="logo-container">
+      <a href="{% url 'index' %}"><img src="{% static 'siteafr/images/logo.jpg' %}" alt="Logo da AFR" class="logo" title="Logo da AFR"/></a>
+    </div>
+    <div class="info-container">
+      <div class="info-block">
+        <i class="icons fa-solid fa-location-dot"></i>
+        <div class="column">
+          <span class="bold">Niterói, RJ</span>
+          <span>Rua Lopes Trovão, 301</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-envelope"></i>
+        <div class="column">
+          <span class="bold">afr@afr.org.br</span>
+          <span>Atendimento: 07:00 - 19:00</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-mobile-screen-button"></i>
+        <div class="column">
+          <span class="bold">(21) 2109-2626</span>
+          <span>Fale conosco!</span>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div class="info-block">
+        <a href="{% url 'doacao' %}" class="btn"><i class="icon-white fa-solid fa-heart"></i>Fazer Doação</a>
+      </div>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <nav class="main-nav">
+    <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Sobre</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'nossahistoria' %}">Nossa História</a>
+          <a href="{% url 'governanca' %}">Governança</a>
+          <a href="{% url 'transparencia' %}">Transparência e prestação de contas</a>
+          <a href="{% url 'certificacoes' %}">Certificações</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Área de atuação</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+          <a href="{% url 'depmedico' %}">Departamento Médico</a>
+          <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+          <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Contato</a>
+        <div class="dropdown-menu">
+            <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+            <a href="{% url 'voluntariado' %}">Voluntariado</a>
+            <a href="{% url 'sac' %}">Fale com a AFR</a>
+            <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+            <a href="{% url 'visita' %}">Faça uma visita</a>
+        </div>
+      </li>
+      <li><a href="{% url 'atendimento' %}">Atendimento</a></li>
+    </ul>
+  </nav>
+  <nav class="sidebar" id="sidebar">
+       <a href="{% url 'index' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">HOME<span></span></div></a>
+    <div class="menu-item" onclick="toggleSubmenu(this)">SOBRE<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'nossahistoria' %}">Nossa História</a>
+      <a href="{% url 'governanca' %}">Governança</a>
+      <a href="{% url 'transparencia' %}">Prestação de contas</a>
+      <a href="{% url 'certificacoes' %}">Certificações</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">ÁREA DE ATUAÇÃO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+      <a href="{% url 'index' %}">Departamento Médico</a>
+      <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+      <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">CONTATO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'visita' %}">Faça uma visita</a>
+      <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+      <a href="{% url 'voluntariado' %}">Voluntariado</a>
+      <a href="{% url 'sac' %}">Fale com a AFR</a>
+      <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+    </div>
+
+    <a href="{% url 'atendimento' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">ATENDIMENTO<span></span></div></a>
+  </nav>
+
+    
+
+<div class="banner">
+  <img src="{% static 'siteafr/images/bannernossahistoria.avif' %}">
+  <div class="overlay"></div>
+  <div class="banner-texto">Nossa História</div>
+</div>
+
+  <div class="container">
+    <h1>Associação Fluminense de<br>Reabilitação - AFR</h1>
+    
+    <p><strong><em>Fundação: 25 de junho de 1958.</em></strong></p>
+    
+    <p>
+      Desde sua fundação, a <strong>AFR</strong> tem sido um lugar de começos e recomeços — uma 
+      <strong class="bold">instituição filantrópica</strong>, reconhecida de Utilidade Pública, que atua na melhoria da qualidade de vida de crianças, adolescentes e adultos com deficiências.<br>
+      Atualmente, conta com <strong>214</strong> funcionários, <strong>200</strong> estagiários e cerca de <strong>1.700</strong> pacientes em tratamento — dos quais <strong>700</strong> são crianças com comprometimento neurológico —, gerando mais de <strong>20.000</strong> atendimentos mensais.
+    </p>
+
+    <p><strong>Um verdadeiro patrimônio vivo de Niterói.</strong></p>
+
+    <p>
+      A <strong>AFR</strong> é um <strong>Centro de Reabilitação pioneiro no Brasil</strong> na aplicação de técnicas Multi, Inter e Transdisciplinares de Terapias de Reabilitação e Medicina Física. É uma instituição que, desde sua fundação, empreende e dedica esforços por mais espaço, por mais recursos, por mais qualidade, pelo novo. 
+      <strong>Buscar o novo é algo que faz parte do DNA da AFR.</strong>
+    </p>
+
+    <div class="video-youtube">
+        <div class="video-wrapper">
+       <iframe width="560" height="315"
+       src="https://www.youtube.com/embed/MJAvRxYJIdQ?si=P7nDWXICmAecggLQ"
+       title="YouTube video player"
+       frameborder="0"
+       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+ <div class="container">
+  <span>
+
+Grandes ideais, como aqueles que fundaram a nossa organização filantrópica há mais de 62 anos, são frutos não só do estudo, 
+criatividade e originalidade, mas também de muito trabalho, de paixão, de espírito de servir e ajudar e, sobretudo, de não ter 
+medo de experimentar o inusitado e os caminhos ainda não percorridos.
+A AFR foi criada no auge do surto brasileiro de poliomielite e hoje é um<strong> Centro Especializado em Reabilitação, habilitado pelo 
+Ministério da Saúde como CER II, nas modalidades Física e Intelectual,  para atendimento a pacientes de alta complexidade.</strong> 
+Qualificados terapeutas dispõem de inúmeros recursos eficazes e atualizados para desenvolverem o processo de Reabilitação. 
+Desde o primeiro contato com o paciente, os profissionais oferecem um atendimento diferenciado, personalizado e preciso de avaliação.
+Contando com uma moderna<strong> 
+Oficina Ortopédica, atende a pacientes de 63 municípios do Estado do RJ, dispensando órteses, próteses e meios auxiliares de locomoção.</strong>
+É um dos mais importantes Centros de Reabilitação do país dedicado a programas de atendimento e formação profissional, promovendo Cursos, Seminários, Treinamentos e Eventos Científicos 
+ligados as Áreas de Reabilitação. 
+Sabemos que o conhecimento, o talento e o amor - somados a dedicação e competência - transformam vidas em busca da esperança de inclusão social, educacional e econômica.
+    
+  </span>
+    
+</div>
+
+  <div class="historia">
+    <div class="historia-conteudo">
+    <h1>História</h1>
+    <p>Referência no tratamento de pessoas portadoras de problemas neurológicos, 
+      AFR foi criada em 1958, no auge do surto brasileiro de poliomielite. 
+      Pioneira no Brasil na aplicação de técnicas multidisciplinares de terapias de reabilitação, a AFR é uma entidade 
+      filantrópica, privada, sem fins lucrativos e reconhecida legalmente como sendo de utilidade pública. 
+      Habilitada pelo Ministério da Saúde para atendimentos de pacientes de alta complexidade, 
+      cuida de centenas de crianças, jovens e adultos com algum tipo de deficiência física ou intelectual.
+    </p>
+
+
+    <p>A ideia de criar a Associação Fluminense de Reabilitação surgiu de Martha Rique Reis, primeira presidente da entidade, 
+      e do seu marido Geraldo Reis, após o filho do casal ter ficado com sequelas de um acidente equestre.
+
+    Em 26 de junho 1958, a Assembleia Legislativa do antigo Estado do Rio de Janeiro aprovou a lei que criou a AFR, 
+    de autoria do então deputado Geraldo Reis. 
+    Caberia ao governo estadual a tarefa de construir em seis meses o Centro de Recuperação. Pela Lei 3.678, 
+    a instituição ficaria subordinada ao Departamento Estadual de Educação Física. A construção de um pavilhão, 
+    junto ao Estádio Caio Martins, em Icaraí, deveria ser iniciada no prazo de 60 dias.
+    </p>
+
+    <p> O Governo do Estado não cumpriu com o compromisso assumido e uma nova lei estadual determinou a doação de um terreno 
+      que pertencia ao Caio Martins para a construção do Centro de Recuperação. O projeto do prédio foi elaborado pelo arquiteto Fernando Lemos, 
+      o mesmo que desenhou as instalações da Associação Brasileira Beneficente de Reabilitação (ABBR). Porém a AFR não dispunha de recursos 
+      financeiros para tal empreendimento. Sem dinheiro, optou-se por erguer provisoriamente um pavilhão de madeira em terreno cedido por 
+      empréstimo pelo governo estadual, nos limites do estádio de futebol.</p>
+
+    <p>As pessoas envolvidas na criação da AFR, realizaram atividades para arrecadar fundos visando à execução do projeto de construção.
+    Com a ajuda da sociedade niteroiense e de instituições públicas e privadas, a obra foi iniciada em maio de 1959 e, dez meses após, 
+    inaugurou-se o pavilhão do Centro de Recuperação. No primeiro ano de atuação, aplicou 532 vacinas Salk - contra a paralisia infantil. 
+    É necessário destacar que, em 1958, a entidade prestou elevada colaboração a Niterói, então capital do Estado do Rio de Janeiro, no combate
+     à poliomielite.</p>
+
+    <p>Atuou no atendimento às vítimas do incêndio do Gran Circo Norte-Americano, em 1960. O trabalho foi considerado árduo, para a 
+    Equipe de uma instituição que tinha apenas dois anos de existência. Nesse período, também, a ABBR auxiliou nas ações a serem 
+    realizadas pela AFR.
+    Essa colaboração proporcionou um significativo resultado, que contou, inclusive, com a participação de
+    profissionais daquela entidade pelo período de seis meses. Foi nessa época também que teve início uma ação conjunta com o 
+    Hospital Universitário Antônio Pedro. Depois da alta hospitalar, os pacientes realizaram tratamento reabilitador na AFR.</p>
+
+
+    <p>A AFR transformou-se num Centro de Referência em Medicina Física e de Reabilitação. Atende 1.700 pacientes provenientes de várias partes 
+    do Estado, dos quais 700 são crianças carentes e jovens que foram vítimas da violência urbana, principalmente de assaltos e de acidentes 
+    de trânsito que os tornaram deficientes.</p>
+
+    <p>Sempre à frente na linha de formação científica, participa ativamente do processo de formação de mão de obra especializada, treinando 
+    e atualizando profissionais que se dedicam à reabilitação. Além disso, realiza cursos, palestras, seminários, jornadas e encontros de 
+    caráter técnico, profissional e científico. Conta com uma moderna Oficina Ortopédica vinculada ao Centro de Reabilitação. As filas de 
+    espera por aparelhos ortopédicos, órteses, próteses e o tratamento de reabilitação foram reduzidas.</p>
+
+    <p><strong>Desde então, a AFR ampliou o atendimento em Reabilitação a pessoas de todas as faixas etárias. Hoje, a AFR é referência em sua área de 
+    atuação, resultado de uma trajetória marcada pelo compromisso e dedicação à causa das pessoas com deficiência física/intelectual.</strong></p>
+  
+  </div>
+</div>
+  <div class="principios-container">
+  <h2 class="titulo-principios">Princípios Organizacionais</h2>
+  <div class="caixas-principios">
+    <div class="caixa-missao">
+      <h3>Missão</h3>
+      <p>
+        Oferecer tratamento multidisciplinar de Reabilitação à Pessoa com Deficiência,
+        objetivando alcançar sua recuperação, com o melhor desempenho físico, mental, social,
+        vocacional, econômico, permitindo a sua integração social e exercício de plena cidadania,
+        participando decisivamente na formação e capacitação de estudantes e profissionais das mais
+        diversas áreas da Reabilitação, atuando inclusive nas áreas de pesquisa e desenvolvimento.
+      </p>
+    </div>
+    <div class="caixa-visao">
+      <h3>Visão</h3>
+      <p>
+        Ser reconhecida nacional e internacionalmente pela qualidade dos serviços prestados,
+        com uma referência de métodos e técnicas, tecnologias e formação de profissionais
+        de reabilitação física. Ser uma das melhores organizações filantrópicas, científicas e
+        educacionais sempre implementando novas abordagens que visem à constante melhoria da
+        qualidade de vida de nossos Clientes.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="valores-container">
+  <h2 class="titulo-valores">Valores</h2>
+  <ul class="lista-valores">
+    <li><strong>CONFIANÇA NAS PESSOAS</strong> e na sua vontade de progredir e crescer junto com a AFR;</li>
+    <li><strong>INVESTIR</strong> na pesquisa de novas tecnologias e novos métodos terapêuticos de Reabilitação;</li>
+    <li><strong>VOCAÇÃO</strong> para a pesquisa, o ensino, a formação de futuros profissionais e a reciclagem dos profissionais de Reabilitação;</li>
+    <li><strong>TRABALHAR</strong> com tecnologia, competência e confiança para a reabilitação da vida;</li>
+    <li><strong>ENVOLVER</strong> a Comunidade Empresarial na contribuição com a filantropia;</li>
+    <li><strong>ATUAR</strong> sempre com a confiança como o ingrediente vital nos programas de recuperação;</li>
+    <li><strong>TRAZER</strong> dentro de si a firme convicção de que a maior parte da função física perdida pelo Cliente pode ser reabilitada;</li>
+    <li><strong>ENVOLVER</strong> precocemente os familiares com o tratamento, entendendo que a família contribui decisivamente para assegurar uma transição tranquila nas delicadas fases iniciais do tratamento, proporcionando a segurança e a motivação necessárias aos bons resultados terapêuticos em seus entes queridos;</li>
+    <li><strong>FOCAR</strong> na realidade de que Cliente de qualquer idade têm o objetivo comum de recuperar as funções e habilidades perdidas, e a vida independente o mais completa e rapidamente possível;</li>
+    <li><strong>FAZER SEMPRE A DIFERENÇA.</strong></li>
+  </ul>
+</div>
+
+ <footer class="footer">
+  <div class="footer-header">
+    <a href="#"><img src="{% static 'siteafr/images/AFRIMG4.png' %}" alt="Logo da AFR" class="logo" title="Logo da AFR" id="voltarTopo"/></a>
+    <div class="social-icons-footer">
+      <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>UNIDADES</h3>
+      <ul>
+        <li><a href="{% url 'unidadefluminense' %}">Associação Fluminense de Reabilitação</a></li>
+        <li><a href="{% url 'unidadelisaura' %}">Unidade de Reabilitação e Atendimento Especializado Lisaura Ruas</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>OUTRAS PÁGINAS</h3>
+      <ul>
+        <li><a href="{% url 'parceiroscaptacao' %}">Parceiros de Captação</a></li>
+        <li><a href="{% url 'imprensa' %}">Imprensa</a></li>
+        <li><a href="{% url 'editais' %}">Editais</a></li>
+        <li><a href="{% url 'fag' %}">Perguntas Frequentes</a></li>
+        <li><a href="{% url 'guia' %}">Guia</a></li>
+        <li><a href="{% url 'privacidade' %}">Política de Privacidade</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>COMO AJUDAR</h3>
+      <ul>
+        <li><a href="{% url 'doacao' %}" class="btn-footer"><i class="icon-red fa-solid fa-heart"></i>Fazer Doação</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>CERTIFICAÇÕES</h3>
+      <ul>
+        <li><img src="{% static 'siteafr/images/CEBASCERTIFICACAO.png' %}" class="cert"/></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="{% static 'siteafr/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFR - Oficina Ortopédica | Brasil</title>
+  <link rel="stylesheet" href= {% static 'siteafr/oficinaorto.css' %} />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <header class="top-header">
+    <div class="logo-container">
+      <a href="{% url 'index' %}"><img src="{% static 'siteafr/images/logo.jpg' %}" alt="Logo da AFR" class="logo" title="Logo da AFR"/></a>
+    </div>
+    <div class="info-container">
+      <div class="info-block">
+        <i class="icons fa-solid fa-location-dot"></i>
+        <div class="column">
+          <span class="bold">Niterói, RJ</span>
+          <span>Rua Lopes Trovão, 301</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-envelope"></i>
+        <div class="column">
+          <span class="bold">afr@afr.org.br</span>
+          <span>Atendimento: 07:00 - 19:00</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-mobile-screen-button"></i>
+        <div class="column">
+          <span class="bold">(21) 2109-2626</span>
+          <span>Fale conosco!</span>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div class="info-block">
+        <a href="{% url 'doacao' %}" class="btn"><i class="icon-white fa-solid fa-heart"></i>Fazer Doação</a>
+      </div>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <nav class="main-nav">
+    <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Sobre</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'nossahistoria' %}">Nossa História</a>
+          <a href="{% url 'governanca' %}">Governança</a>
+          <a href="{% url 'transparencia' %}">Transparência e prestação de contas</a>
+          <a href="{% url 'certificacoes' %}">Certificações</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Área de atuação</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+          <a href="{% url 'depmedico' %}">Departamento Médico</a>
+          <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+          <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Contato</a>
+        <div class="dropdown-menu">
+            <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+            <a href="{% url 'voluntariado' %}">Voluntariado</a>
+            <a href="{% url 'sac' %}">Fale com a AFR</a>
+            <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+            <a href="{% url 'visita' %}">Faça uma visita</a>
+        </div>
+      </li>
+      <li><a href="{% url 'atendimento' %}">Atendimento</a></li>
+    </ul>
+  </nav>
+  <nav class="sidebar" id="sidebar">
+       <a href="{% url 'index' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">HOME<span></span></div></a>
+    <div class="menu-item" onclick="toggleSubmenu(this)">SOBRE<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'nossahistoria' %}">Nossa História</a>
+      <a href="{% url 'governanca' %}">Governança</a>
+      <a href="{% url 'transparencia' %}">Prestação de contas</a>
+      <a href="{% url 'certificacoes' %}">Certificações</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">ÁREA DE ATUAÇÃO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+      <a href="{% url 'index' %}">Departamento Médico</a>
+      <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+      <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">CONTATO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'visita' %}">Faça uma visita</a>
+      <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+      <a href="{% url 'voluntariado' %}">Voluntariado</a>
+      <a href="{% url 'sac' %}">Fale com a AFR</a>
+      <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+    </div>
+
+    <a href="{% url 'atendimento' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">ATENDIMENTO<span></span></div></a>
+  </nav>
+
+  
+  <section>
+  	<div class="titulo-imagem">
+		<img src="{% static 'siteafr/images/oficinaorto.avif' %}" alt="Oficina Ortopédica"/>
+        <figcaption> <strong>Oficina Ortopédica</strong> </figcaption>
+	</div>
+	
+	<div class='texto'>
+		<p>Com o objetivo de auxiliar na reabilitação do Paciente e melhorar a qualidade de vida das pessoas com deficiência física, desde 2002 a AFR mantém Oficina Ortopédica onde são fabricados produtos ortopédicos sob medida, como órteses, próteses, coletes e adaptações para cadeiras de rodas. 
+		Há também produtos em pronta entrega, entre eles bengalas, andadores e cadeiras de banho. </p>
+		
+		<p> Para garantir a qualidade dos produtos fabricados e seu ajuste perfeito em cada paciente, a Oficina Ortopédica conta com uma Equipe Multidisciplinar especializada que acompanha todo o processo de fabricação, provas e entrega final ao cliente.
+		A Equipe inclui médicos, fisioterapeutas, terapeutas ocupacionais, protesistas e ortesistas ortopédicos.
+		Há um programa de treinamento e educação continuada, de modo a promover a atualização constante.</p>
+		
+		<p>A expertise artesanal dos profissionais da AFR é complementada pelo uso de recursos tecnológicos avançados, que contribuem para o levantamento preciso das medidas do Paciente, a confiabilidade do produto e a agilidade do processo. Entre os materiais utilizados na fabricação estão aço, alumínio, titânio, fibra de carbono e termoplástico.
+			Desde a fundação da Oficina Ortopédica, a AFR tem sido pioneira no desenvolvimento de novas técnicas e na adoção de tecnologias inovadoras.
+			A Instituição é uma das poucas no Brasil com produção própria de órteses para correção de assimetrias cranianas, além de oferecer produtos diferenciados no mercado,
+			como próteses de membros superiores com acionamento mioelétrico.</p>
+	</div>
+	
+	<div class='titulo'>	
+		<h1> Produtos Ortopédicos Fabricados </h1>
+	</div>
+	
+	<div class='protese'>
+		<p> Prótese </p>
+	</div>
+	
+	<div class='video'>
+		<iframe src="https://www.youtube.com/embed/M68WmNl0efY" frameborder='0' width="600px" height="315"></iframe>
+	</div>
+	
+	<div class='calcado'>
+		<p> Calçado Ortopédico </p>
+	</div>
+	
+	<div class='video2'>
+		<iframe src="https://www.youtube.com/embed/KrW3x1v2FLQ" frameborder='0' width="600px" height="315"></iframe>
+	</div>
+	
+	<div class='ortese'>
+		<p> Órtese </p>
+	</div>
+	
+	<div class='video3'>
+		<iframe src="https://www.youtube.com/embed/RLgUp1ES98w" frameborder='0' width="600px" height="315"></iframe>
+	</div>
+	
+	<div class='email'>
+		<p> Para pedir orçamento, envie e-mail para <a href='mailto:oficina@afr.org.br'>oficina@afr.org.br</a>, anexando a prescrição médica do produto e os seguintes dados:
+		nome do Paciente, data de nascimento, telefone residencial, telefone celular, nome da mãe do paciente e CPF. A Equipe responsável entrará em contato.</p>
+	</div>
+	
+	</section>
+  
+  <!-- Footer -->
+  
+  <footer class="footer">
+  <div class="footer-header">
+    <a href="#"><img src="{% static 'siteafr/images/AFRIMG4.png' %}" alt="Logo da AFR" class="logo" title="Logo da AFR" id="voltarTopo"/></a>
+    <div class="social-icons-footer">
+      <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>UNIDADES</h3>
+      <ul>
+        <li><a href="{% url 'unidadefluminense' %}">Associação Fluminense de Reabilitação</a></li>
+        <li><a href="{% url 'unidadelisaura' %}">Unidade de Reabilitação e Atendimento Especializado Lisaura Ruas</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>OUTRAS PÁGINAS</h3>
+      <ul>
+        <li><a href="{% url 'parceiroscaptacao' %}">Parceiros de Captação</a></li>
+        <li><a href="{% url 'imprensa' %}">Imprensa</a></li>
+        <li><a href="{% url 'editais' %}">Editais</a></li>
+        <li><a href="{% url 'fag' %}">Perguntas Frequentes</a></li>
+        <li><a href="{% url 'guia' %}">Guia</a></li>
+        <li><a href="{% url 'privacidade' %}">Política de Privacidade</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>COMO AJUDAR</h3>
+      <ul>
+        <li><a href="{% url 'doacao' %}" class="btn-footer"><i class="icon-red fa-solid fa-heart"></i>Fazer Doação</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>CERTIFICAÇÕES</h3>
+      <ul>
+        <li><img src="{% static 'siteafr/images/CEBASCERTIFICACAO.png' %}" class="cert"/></li>
+      </ul>
+    </div>
+  </div>
+  </footer>
+<script src="{% static 'siteafr/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFR - Trabalhe Conosco | Brasil</title>
+  <link rel="stylesheet" href="{% static 'siteafr/trabalheconosco.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+   <header class="top-header">
+    <div class="logo-container">
+      <a href="{% url 'index' %}"><img src="{% static 'siteafr/images/logo.jpg' %}" alt="Logo da AFR" class="logo" title="Logo da AFR"/></a>
+    </div>
+    <div class="info-container">
+      <div class="info-block">
+        <i class="icons fa-solid fa-location-dot"></i>
+        <div class="column">
+          <span class="bold">Niterói, RJ</span>
+          <span>Rua Lopes Trovão, 301</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-envelope"></i>
+        <div class="column">
+          <span class="bold">afr@afr.org.br</span>
+          <span>Atendimento: 07:00 - 19:00</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-mobile-screen-button"></i>
+        <div class="column">
+          <span class="bold">(21) 2109-2626</span>
+          <span>Fale conosco!</span>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div class="info-block">
+        <a href="{% url 'doacao' %}" class="btn"><i class="icon-white fa-solid fa-heart"></i>Fazer Doação</a>
+      </div>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <nav class="main-nav">
+    <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Sobre</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'nossahistoria' %}">Nossa História</a>
+          <a href="{% url 'governanca' %}">Governança</a>
+          <a href="{% url 'transparencia' %}">Transparência e prestação de contas</a>
+          <a href="{% url 'certificacoes' %}">Certificações</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Área de atuação</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+          <a href="{% url 'depmedico' %}">Departamento Médico</a>
+          <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+          <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Contato</a>
+        <div class="dropdown-menu">
+            <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+            <a href="{% url 'voluntariado' %}">Voluntariado</a>
+            <a href="{% url 'sac' %}">Fale com a AFR</a>
+            <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+            <a href="{% url 'visita' %}">Faça uma visita</a>
+        </div>
+      </li>
+      <li><a href="{% url 'atendimento' %}">Atendimento</a></li>
+    </ul>
+  </nav>
+  <nav class="sidebar" id="sidebar">
+       <a href="{% url 'index' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">HOME<span></span></div></a>
+    <div class="menu-item" onclick="toggleSubmenu(this)">SOBRE<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'nossahistoria' %}">Nossa História</a>
+      <a href="{% url 'governanca' %}">Governança</a>
+      <a href="{% url 'transparencia' %}">Prestação de contas</a>
+      <a href="{% url 'certificacoes' %}">Certificações</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">ÁREA DE ATUAÇÃO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+      <a href="{% url 'index' %}">Departamento Médico</a>
+      <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+      <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">CONTATO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'visita' %}">Faça uma visita</a>
+      <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+      <a href="{% url 'voluntariado' %}">Voluntariado</a>
+      <a href="{% url 'sac' %}">Fale com a AFR</a>
+      <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+    </div>
+
+    <a href="{% url 'atendimento' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">ATENDIMENTO<span></span></div></a>
+  </nav>
+
+<!--header daqui pra cima-->
+
+<section>
+	<div class="titulo-imagem">
+		<img src="{% static 'siteafr/images/bannertrabalhe.avif' %}"/>
+        <figcaption> <strong>Trabalhe conosco</strong> </figcaption>
+	</div>
+</section>
+
+<section class="intro-text">
+  <p>Se você busca novos desafios e deseja fazer parte da nossa Equipe, envie seu currículo em anexo ao email: <strong>afrdp@afr.org.br</strong> agora mesmo. Seu CV será analisado por nossos recrutadores. Entraremos em contato oportunamente.</p>
+</section>
+
+<div class="vagas-container">
+  <h2 class="titulo-vagas">Vagas</h2>
+
+  <div class="vaga">
+    <span class="nome-vaga">Fonoaudiólogos(as)</span>
+    <button class="botao-sobre" onclick = openPopup('fono')>Sobre</button>
+  </div>
+  <hr>
+
+  <div class="vaga">
+    <span class="nome-vaga">Terapeutas Ocupacionais</span>
+    <button class="botao-sobre" onclick = openPopup('tera')>Sobre</button>
+  </div>
+  <hr>
+</div>
+  <div class="overlay-trab" id="overlay-trab" onclick="closePopup()"></div>
+    <div class="popup-trab" id="popup-fono">
+        <h3>Vaga: Fonoaudiólogo(a)</h3>
+    <p><strong>Tipo:</strong> Efetivo | <strong>Jornada:</strong> Meio período | <strong>Modelo:</strong> Presencial</p>
+    <p><strong>Setor:</strong> Organizações sem fins lucrativos</p>
+
+    <section>
+      <h2>Sobre a vaga</h2>
+      <p>Atuação na Reabilitação física e intelectual com foco em acolhimento, cuidado e valorização da prática. O objetivo é promover qualidade de vida e bem-estar individual.</p>
+    </section>
+
+    <section>
+      <h2>Responsabilidades</h2>
+      <ul>
+        <li>Avaliar capacidades e deficiências dos usuários;</li>
+        <li>Propor melhorias para qualidade de vida;</li>
+        <li>Elaborar planos terapêuticos e relatórios;</li>
+        <li>Tratar alterações na fala, linguagem e voz;</li>
+        <li>Orientar famílias e equipes;</li>
+        <li>Utilizar recursos de informática;</li>
+        <li>Participar da construção do Projeto Terapêutico Singular com base na CIF.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Requisitos</h2>
+      <ul>
+        <li>Graduação em Fonoaudiologia;</li>
+        <li>Registro no Conselho Regional (1ª Região);</li>
+        <li>Experiência em estimulação precoce, autismo, doenças crônicas e degenerativas;</li>
+        <li>Trabalho em equipe interdisciplinar;</li>
+        <li>Motivação e empatia.</li>
+      </ul>
+    </section>
+        <button class="close-btn" onclick="closePopup()">Fechar</button>
+    </div>
+    <div class="popup-trab" id="popup-tera">
+        <h3>Vaga: Terapeuta Ocupacional</h3>
+    <p><strong>Tipo:</strong> Efetivo | <strong>Jornada:</strong> Meio período | <strong>Modelo:</strong> Presencial</p>
+    <p><strong>Setor:</strong> Organizações sem fins lucrativos</p>
+
+    <section>
+      <h2>Sobre a vaga</h2>
+      <p>Atuação com Terapia Ocupacional em Reabilitação física e intelectual, voltada ao acolhimento, aprendizado e promoção da autonomia. O profissional integrará uma equipe interdisciplinar em uma instituição referência.</p>
+    </section>
+
+    <section>
+      <h2>Principais atividades</h2>
+      <ul>
+        <li>Realizar atendimentos terapêuticos focados em autonomia e reabilitação;</li>
+        <li>Participar de planejamentos e avaliações interdisciplinares;</li>
+        <li>Acompanhar evolução funcional dos pacientes;</li>
+        <li>Utilizar recursos terapêuticos e de informática no processo de reabilitação;</li>
+        <li>Conduzir oficinas e elaborar relatórios técnicos;</li>
+        <li>Intervir junto a pacientes com deficiência ou em situação de vulnerabilidade.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Requisitos</h2>
+      <ul>
+        <li>Graduação em Terapia Ocupacional e registro no CREFITO;</li>
+        <li>Desejável experiência com reabilitação física e neurológica;</li>
+        <li>Conhecimento da Classificação Internacional de Funcionalidade (CIF);</li>
+        <li>Vivência com pessoas com deficiência ou inclusão no mercado de trabalho;</li>
+        <li>Domínio básico de Windows, Word e Excel.</li>
+      </ul>
+    </section>
+        <button class="close-btn" onclick="closePopup()">Fechar</button>
+    </div>
+
+
+
+
+
+
+
+<!--footer daqui pra baixo-->
+<footer class="footer">
+  <div class="footer-header">
+    <a href="#"><img src="{% static 'siteafr/images/AFRIMG4.png' %}" alt="Logo da AFR" class="logo" title="Logo da AFR" id="voltarTopo"/></a>
+    <div class="social-icons-footer">
+      <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>UNIDADES</h3>
+      <ul>
+        <li><a href="{% url 'unidadefluminense' %}">Associação Fluminense de Reabilitação</a></li>
+        <li><a href="{% url 'unidadelisaura' %}">Unidade de Reabilitação e Atendimento Especializado Lisaura Ruas</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>OUTRAS PÁGINAS</h3>
+      <ul>
+        <li><a href="{% url 'parceiroscaptacao' %}">Parceiros de Captação</a></li>
+        <li><a href="{% url 'imprensa' %}">Imprensa</a></li>
+        <li><a href="{% url 'editais' %}">Editais</a></li>
+        <li><a href="{% url 'fag' %}">Perguntas Frequentes</a></li>
+        <li><a href="{% url 'guia' %}">Guia</a></li>
+        <li><a href="{% url 'privacidade' %}">Política de Privacidade</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>COMO AJUDAR</h3>
+      <ul>
+        <li><a href="{% url 'doacao' %}" class="btn-footer"><i class="icon-red fa-solid fa-heart"></i>Fazer Doação</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>CERTIFICAÇÕES</h3>
+      <ul>
+        <li><img src="{% static 'siteafr/images/CEBASCERTIFICACAO.png' %}" class="cert"/></li>
+      </ul>
+    </div>
+  </div>
+  </footer>
+<script src="{% static 'siteafr/trabalheconosco.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema AFR - CRUD de Pacientes</title>
+    <link rel="stylesheet" href="{% static 'siteafr/sistema-restrito-crud.css' %}">
+</head>
+<body>
+<a href="{% url 'index' %}" class="btn-voltar">Voltar</a>
+<h1><strong>GERENCIAMENTO DE PACIENTES</strong></h1>
+<div class="flex">
+<form method="post" action="{% url 'sistema-restrito-crud' %}" class="add-patient-form">
+
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" name="telefone" required>
+            </div>
+        </div>
+    <div class="bt-flex">
+        <button type="submit" class="submit-button">Incluir</button>
+    </div>
+
+
+    </form>
+<div class="action-section">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="alterar_nome">Nome:</label>
+                <input type="text" id="alterar_nome" name="alterar_nome">
+            </div>
+            <div class="form-group">
+                <label for="alterar_email">Email:</label>
+                <input type="email" id="alterar_email" name="alterar_email">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="alterar_idade">Idade:</label>
+                <input type="number" id="alterar_idade" name="alterar_idade">
+            </div>
+            <div class="form-group">
+                <label for="alterar_telefone">Telefone:</label>
+                <input type="text" id="alterar_telefone" name="alterar_telefone">
+            </div>
+        </div>
+        <div class="button-row">
+            <button type="button" class="action-button" id="btnAlterar">Alterar</button>
+            <button type="button" class="action-button" id="btnExcluir">Excluir</button>
+            <button type="button" class="action-button" id="btnGerarRelatorio">Gerar relatório</button>
+            <a href="{% url 'gerar-grafico' %}" class="btn btn-info">Gerar Gráfico</a>
+        </div>
+    </div>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th><th>Nome</th><th>Email</th><th>Idade</th><th>Telefone</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for paciente in pacientes %}
+                <tr data-id="{{ paciente.id }}" data-nome="{{ paciente.nome }}" data-email="{{ paciente.email }}" data-idade="{{ paciente.idade }}" data-telefone="{{ paciente.telefone }}">
+                    <td>{{ paciente.id }}</td>
+                    <td>{{ paciente.nome }}</td>
+                    <td>{{ paciente.email }}</td>
+                    <td>{{ paciente.idade }}</td>
+                    <td>{{ paciente.telefone }}</td>
+                </tr>
+            {% empty %}
+                <tr><td colspan="5">Nenhum paciente cadastrado.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<script>
+    const gerarRelatorioURL = "{% url 'gerar-relatorio-historico' %}";
+
+</script>
+    <script src="{% static 'siteafr/sistema-restrito-crud.js' %}"></script>
+</body>
+</html>

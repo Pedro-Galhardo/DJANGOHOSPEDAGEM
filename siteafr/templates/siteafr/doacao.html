@@ -1,0 +1,273 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFR - Doação | Brasil</title>
+  <link rel="stylesheet" href="{% static 'siteafr/doacao.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <header class="top-header">
+    <div class="logo-container">
+      <a href="{% url 'index' %}"><img src="{% static 'siteafr/images/logo.jpg' %}" alt="Logo da AFR" class="logo" title="Logo da AFR"/></a>
+    </div>
+    <div class="info-container">
+      <div class="info-block">
+        <i class="icons fa-solid fa-location-dot"></i>
+        <div class="column">
+          <span class="bold">Niterói, RJ</span>
+          <span>Rua Lopes Trovão, 301</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-envelope"></i>
+        <div class="column">
+          <span class="bold">afr@afr.org.br</span>
+          <span>Atendimento: 07:00 - 19:00</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-mobile-screen-button"></i>
+        <div class="column">
+          <span class="bold">(21) 2109-2626</span>
+          <span>Fale conosco!</span>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div class="info-block">
+        <a href="{% url 'doacao' %}" class="btn"><i class="icon-white fa-solid fa-heart"></i>Fazer Doação</a>
+      </div>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <nav class="main-nav">
+    <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Sobre</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'nossahistoria' %}">Nossa História</a>
+          <a href="{% url 'governanca' %}">Governança</a>
+          <a href="{% url 'transparencia' %}">Transparência e prestação de contas</a>
+          <a href="{% url 'certificacoes' %}">Certificações</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Área de atuação</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+          <a href="{% url 'depmedico' %}">Departamento Médico</a>
+          <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+          <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Contato</a>
+        <div class="dropdown-menu">
+            <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+            <a href="{% url 'voluntariado' %}">Voluntariado</a>
+            <a href="{% url 'sac' %}">Fale com a AFR</a>
+            <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+            <a href="{% url 'visita' %}">Faça uma visita</a>
+        </div>
+      </li>
+      <li><a href="{% url 'atendimento' %}">Atendimento</a></li>
+    </ul>
+  </nav>
+  <nav class="sidebar" id="sidebar">
+       <a href="{% url 'index' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">HOME<span></span></div></a>
+    <div class="menu-item" onclick="toggleSubmenu(this)">SOBRE<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'nossahistoria' %}">Nossa História</a>
+      <a href="{% url 'governanca' %}">Governança</a>
+      <a href="{% url 'transparencia' %}">Prestação de contas</a>
+      <a href="{% url 'certificacoes' %}">Certificações</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">ÁREA DE ATUAÇÃO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+      <a href="{% url 'index' %}">Departamento Médico</a>
+      <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+      <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">CONTATO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'visita' %}">Faça uma visita</a>
+      <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+      <a href="{% url 'voluntariado' %}">Voluntariado</a>
+      <a href="{% url 'sac' %}">Fale com a AFR</a>
+      <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+    </div>
+
+    <a href="{% url 'atendimento' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">ATENDIMENTO<span></span></div></a>
+  </nav>
+  <div class="titulo-imagem">
+		<img src="{% static 'siteafr/images/AFRIMG6.avif' %}" alt="Doação"/>
+		<figcaption> <strong>Como Ajudar?</strong> </figcaption>
+  </div>
+  <div class="container">
+    <h1>Doação</h1>
+    <div class="intro">
+      <p>Você pode fazer doações mensais à AFR por meio de cartão de crédito, débito, depósito em conta ou boleto bancário. Contribua com o valor que desejar e ajude a garantir atendimento de excelência a milhares de pacientes!</p>
+      <p><strong>Obrigado por sua solidariedade!</strong> Sua doação mensal possibilita à AFR oferecer tratamento para quem tanto precisa.</p>
+    </div>
+
+    <div class="card red">
+      <h3>Depósito Bancário</h3>
+      <p>Se preferir fazer um depósito em conta bancária, é preciso que seja utilizada a opção de <strong>Depósito Identificado (DI)</strong>.</p>
+      <p>
+        <strong>AFR — Associação Fluminense de Reabilitação</strong><br>
+        CNPJ: 30.139.950/0001-62<br>
+        Itaú<br>
+        AG: 0720<br>
+        C/C: 24654-5
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Doações Online</h3>
+      <div class="doar-buttons">
+        <a href="https://www.paypal.com/signin" target="_blank" class="btn-doar btn-paypal"> Doar via PayPal</a>
+        <a href="https://acesso.pagbank.com.br/" target="_blank" class="btn-doar btn-pagseguro">Doar via PagSeguro</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Doações Únicas</h3>
+      <p>A AFR também recebe doações únicas. Toda ajuda é importante! Para mais informações, entre em contato:</p>
+      <div class="central">
+            <div class="contact-box">
+                <div class="contact-item">
+                    <i class="icons fa-solid fa-envelope"></i>
+                    <span>voluntariado@afr.org.br</span>
+                </div>                                          
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+55 (21) 2109-2626</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>De segunda a sexta-feira, das 8h às 18h</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Cofrinhos</h2>
+    <div class="card">
+      <p>Por meio da distribuição de cofrinhos em estabelecimentos comerciais, a campanha dos Cofrinhos divulga a causa da AFR e arrecada doações para nossos projetos.</p>
+      <p>Se você é comerciante ou mesmo funcionário de alguma empresa ou instituição, entre em contato e solicite um cofrinho. Junte-se a essa Corrente do Bem!</p>
+      <p>Para solicitar um cofrinho para o seu comércio, entre em contato:</p>
+      <div class="central">
+            <div class="contact-box">
+                <div class="contact-item">
+                    <i class="icons fa-solid fa-envelope"></i>
+                    <span>voluntariado@afr.org.br</span>
+                </div>                                          
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+55 (21) 2109-2626</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>De segunda a sexta-feira, das 8h às 18h</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2 class="section-title">Atelier</h2>
+    <div class="card">
+      <p>A AFR possui um Atelier que vende produtos novos e seminovos, como roupas, calçados, livros e brinquedos. Entre as marcas que contribuem com a doação de produtos estão Corporeum e Leader.
+         Compre no Atelier! Além de adquirir produtos de qualidade a preços acessíveis, você ajuda a AFR a seguir transformando vidas.
+         Se a sua empresa deseja contribuir com a doação de produtos novos para a venda no atelier, entre em contato: </p>
+      <div class="central">
+            <div class="contact-box">
+                <div class="contact-item">
+                    <i class="icons fa-solid fa-envelope"></i>
+                    <span>voluntariado@afr.org.br</span>
+                </div>                                          
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+55 (21) 2109-2626</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>De segunda a sexta-feira, das 8h às 18h</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2 class="section-title">São aceitos artigos com pequenas avarias. Também retiramos no local.</h2>
+    <div class="card">
+      <p>Visite o atelier e apoie a AFR! Toda a renda adquirida com a venda dos produtos é destinada à manutenção do atendimento aos pacientes. </p>
+      <div class="central">
+            <div class="contact-box">
+                <div class="contact-item">
+                    <i class="icons fa-solid fa-location-dot"></i>
+                    <span>Rua Lopes Trovão, 301 - Icaraí - Niterói - RJ</span>
+                </div>                                          
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>De segunda-feira a sexta-feira, das 9h às 16h</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+    
+  <footer class="footer">
+  <div class="footer-header">
+    <a href="#"><img src="{% static 'siteafr/images/AFRIMG4.png' %}" alt="Logo da AFR" class="logo" title="Logo da AFR" id="voltarTopo"/></a>
+    <div class="social-icons-footer">
+      <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>UNIDADES</h3>
+      <ul>
+        <li><a href="{% url 'unidadefluminense' %}">Associação Fluminense de Reabilitação</a></li>
+        <li><a href="{% url 'unidadelisaura' %}">Unidade de Reabilitação e Atendimento Especializado Lisaura Ruas</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>OUTRAS PÁGINAS</h3>
+      <ul>
+        <li><a href="{% url 'parceiroscaptacao' %}">Parceiros de Captação</a></li>
+        <li><a href="{% url 'imprensa' %}">Imprensa</a></li>
+        <li><a href="{% url 'editais' %}">Editais</a></li>
+        <li><a href="{% url 'fag' %}">Perguntas Frequentes</a></li>
+        <li><a href="{% url 'guia' %}">Guia</a></li>
+        <li><a href="{% url 'privacidade' %}">Política de Privacidade</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>COMO AJUDAR</h3>
+      <ul>
+        <li><a href="{% url 'doacao' %}" class="btn-footer"><i class="icon-red fa-solid fa-heart"></i>Fazer Doação</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>CERTIFICAÇÕES</h3>
+      <ul>
+        <li><img src="{% static 'siteafr/images/CEBASCERTIFICACAO.png' %}" class="cert"/></li>
+      </ul>
+    </div>
+  </div>
+  </footer>
+<script src="{% static 'siteafr/script.js' %}"></script>
+</body>
+</html>

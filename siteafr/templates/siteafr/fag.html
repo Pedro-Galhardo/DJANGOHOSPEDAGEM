@@ -1,0 +1,280 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFR - FAQ | Brasil</title>
+  <link rel="stylesheet" href= {% static 'siteafr/fag.css' %} />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header class="top-header">
+    <div class="logo-container">
+      <a href="{% url 'index' %}"><img src="{% static 'siteafr/images/logo.jpg' %}" alt="Logo da AFR" class="logo" title="Logo da AFR"/></a>
+    </div>
+    <div class="info-container">
+      <div class="info-block">
+        <i class="icons fa-solid fa-location-dot"></i>
+        <div class="column">
+          <span class="bold">Niterói, RJ</span>
+          <span>Rua Lopes Trovão, 301</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-envelope"></i>
+        <div class="column">
+          <span class="bold">afr@afr.org.br</span>
+          <span>Atendimento: 07:00 - 19:00</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-mobile-screen-button"></i>
+        <div class="column">
+          <span class="bold">(21) 2109-2626</span>
+          <span>Fale conosco!</span>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div class="info-block">
+        <a href="{% url 'doacao' %}" class="btn"><i class="icon-white fa-solid fa-heart"></i>Fazer Doação</a>
+      </div>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <nav class="main-nav">
+    <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Sobre</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'nossahistoria' %}">Nossa História</a>
+          <a href="{% url 'governanca' %}">Governança</a>
+          <a href="{% url 'transparencia' %}">Transparência e prestação de contas</a>
+          <a href="{% url 'certificacoes' %}">Certificações</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Área de atuação</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+          <a href="{% url 'depmedico' %}">Departamento Médico</a>
+          <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+          <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Contato</a>
+        <div class="dropdown-menu">
+            <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+            <a href="{% url 'voluntariado' %}">Voluntariado</a>
+            <a href="{% url 'sac' %}">Fale com a AFR</a>
+            <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+            <a href="{% url 'visita' %}">Faça uma visita</a>
+        </div>
+      </li>
+      <li><a href="{% url 'atendimento' %}">Atendimento</a></li>
+    </ul>
+  </nav>
+  <nav class="sidebar" id="sidebar">
+       <a href="{% url 'index' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">HOME<span></span></div></a>
+    <div class="menu-item" onclick="toggleSubmenu(this)">SOBRE<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'nossahistoria' %}">Nossa História</a>
+      <a href="{% url 'governanca' %}">Governança</a>
+      <a href="{% url 'transparencia' %}">Prestação de contas</a>
+      <a href="{% url 'certificacoes' %}">Certificações</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">ÁREA DE ATUAÇÃO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+      <a href="{% url 'depmedico' %}">Departamento Médico</a>
+      <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+      <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">CONTATO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'visita' %}">Faça uma visita</a>
+      <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+      <a href="{% url 'voluntariado' %}">Voluntariado</a>
+      <a href="{% url 'sac' %}">Fale com a AFR</a>
+      <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+    </div>
+
+    <a href="{% url 'atendimento' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">ATENDIMENTO<span></span></div></a>
+  </nav>
+
+
+
+
+<div class="banner">
+  <img src="{% static 'siteafr/images/bannerfag.avif' %}"/>
+  <div class="overlay"></div>
+  <div class="banner-texto">Perguntas Frequentes</div>
+</div>
+
+  <div class="container">
+    <h1 class="titulo">Deficiência física?</h1>
+
+    <div class="faq-item">
+      <div class="faq-pergunta">
+        A AFR atende apenas pacientes com deficiência física?
+        <div class="linha"></div>
+      </div>
+      <div class="faq-resposta">
+        Não. Por meio do atendimento via planos de saúde e particular, a AFR presta assistência a pessoas de todas as idades com diversos tipos de necessidades físicas / intelectuais, ortopédicas, das mais simples às mais complexas.
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="container">
+    <h1 class="titulo">SUS</h1>
+
+    <div class="faq-item">
+      <div class="faq-pergunta">
+        A AFR atende apenas pacientes do SUS?
+        <div class="linha"></div>
+      </div>
+      <div class="faq-resposta">
+       Não. A AFR atende também a Pacientes via planos de saúde e particular.  A relação de planos de saúde com os quais a AFR mantém parceria pode ser consultada aqui.
+    </div>
+  </div>
+
+
+
+
+
+  <div class="container">
+    <h1 class="titulo">Atendimento</h1>
+
+    <div class="faq-item">
+      <div class="faq-pergunta">
+        Como faço para ser atendido pela AFR?
+        <div class="linha"></div>
+      </div>
+      <div class="faq-resposta">
+
+Para saber como ser atendido pela AFR por meio do SUS, clique aqui. Para informações sobre atendimento via planos de saúde ou particular, clique aqui.
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container">
+    <h1 class="titulo">Tratamento</h1>
+
+    <div class="faq-item">
+      <div class="faq-pergunta">
+
+        <div class="linha">Quanto tempo dura o tratamneto no Centro de Reabilitação?</div>
+      </div>
+      <div class="faq-resposta">
+       Na AFR, cada Paciente recebe um atendimento personalizado, que considera suas necessidades, potencialidades e desafios. A duração do tratamento depende de fatores como o quadro clínico, o plano terapêutico definido pela Equipe Médica e Terapêutica e o grau de comprometimento do Paciente e de seus cuidadores, em relação ao processo de reabilitação.
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container">
+    <h1 class="titulo"> Prescrição</h1>
+
+    <div class="faq-item">
+      <div class="faq-pergunta">
+
+É possível ser atendido na Oficina Ortopédica sem ter uma prescrição
+
+do produto ortopédico?
+        <div class="linha"></div>
+      </div>
+      <div class="faq-resposta">
+
+
+
+É indicado ter em mãos o pedido médico com a devida solicitação do produto ortopédico. Para pessoas que já são usuárias de produtos ortopédicos e precisam da prescrição de um novo aparelho, contamos com um profissional que realiza consultas via atendimento particular.
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container">
+    <h1 class="titulo">Caso falte</h1>
+
+    <div class="faq-item">
+      <div class="faq-pergunta">
+        Justificativa de falta
+        <div class="linha"></div>
+      </div>
+      <div class="faq-resposta">
+     Não aceitamos justificativa de falta via Mídias Sociais.
+Caso não consiga comparecer à consulta ou tratamento, o paciente deve entrar em contato com a AFR, através do telefone (21)2109-2626 e apresentar a sua justificativa.
+Destacamos que, se todos avisarem com antecedência a sua falta e/ou reagendamento da consulta, o acesso aos serviços podem favorecer a outras pessoas e não acarretarão prejuízos ao nosso atendimento.
+
+Obs.: faltas e reagendamentos devem ser comunicados com antecedência - exclusivamente - na Recepção ou pelo Telefone: 21 2109-2626.
+      </div>
+    </div>
+  </div>
+
+
+ </div>
+
+ <footer class="footer">
+  <div class="footer-header">
+    <a href="#"><img src="{% static 'siteafr/images/AFRIMG4.png' %}" alt="Logo da AFR" class="logo" title="Logo da AFR" id="voltarTopo"/></a>
+    <div class="social-icons-footer">
+      <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>UNIDADES</h3>
+      <ul>
+        <li><a href="{% url 'unidadefluminense' %}">Associação Fluminense de Reabilitação</a></li>
+        <li><a href="{% url 'unidadelisaura' %}">Unidade de Reabilitação e Atendimento Especializado Lisaura Ruas</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>OUTRAS PÁGINAS</h3>
+      <ul>
+        <li><a href="{% url 'parceiroscaptacao' %}">Parceiros de Captação</a></li>
+        <li><a href="{% url 'imprensa' %}">Imprensa</a></li>
+        <li><a href="{% url 'editais' %}">Editais</a></li>
+        <li><a href="{% url 'fag' %}">Perguntas Frequentes</a></li>
+        <li><a href="{% url 'guia' %}">Guia</a></li>
+        <li><a href="{% url 'privacidade' %}">Política de Privacidade</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>COMO AJUDAR</h3>
+      <ul>
+        <li><a href="{% url 'doacao' %}" class="btn-footer"><i class="icon-red fa-solid fa-heart"></i>Fazer Doação</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>CERTIFICAÇÕES</h3>
+      <ul>
+        <li><img src="{% static 'siteafr/images/CEBASCERTIFICACAO.png' %}" class="cert"/></li>
+      </ul>
+    </div>
+  </div>
+  </footer>
+<script src="{% static 'siteafr/script.js' %}"></script>
+
+

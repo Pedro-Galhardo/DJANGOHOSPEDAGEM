@@ -1,0 +1,336 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFR - Governança | Brasil</title>
+  <link rel="stylesheet" href="{% static 'siteafr/governanca.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <header class="top-header">
+    <div class="logo-container">
+      <a href="{% url 'index' %}"><img src="{% static 'siteafr/images/logo.jpg' %}" alt="Logo da AFR" class="logo" title="Logo da AFR"/></a>
+    </div>
+    <div class="info-container">
+      <div class="info-block">
+        <i class="icons fa-solid fa-location-dot"></i>
+        <div class="column">
+          <span class="bold">Niterói, RJ</span>
+          <span>Rua Lopes Trovão, 301</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-envelope"></i>
+        <div class="column">
+          <span class="bold">afr@afr.org.br</span>
+          <span>Atendimento: 07:00 - 19:00</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-mobile-screen-button"></i>
+        <div class="column">
+          <span class="bold">(21) 2109-2626</span>
+          <span>Fale conosco!</span>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div class="info-block">
+        <a href="{% url 'doacao' %}" class="btn"><i class="icon-white fa-solid fa-heart"></i>Fazer Doação</a>
+      </div>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <nav class="main-nav">
+    <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Sobre</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'nossahistoria' %}">Nossa História</a>
+          <a href="{% url 'governanca' %}">Governança</a>
+          <a href="{% url 'transparencia' %}">Transparência e prestação de contas</a>
+          <a href="{% url 'certificacoes' %}">Certificações</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Área de atuação</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+          <a href="{% url 'depmedico' %}">Departamento Médico</a>
+          <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+          <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Contato</a>
+        <div class="dropdown-menu">
+            <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+            <a href="{% url 'voluntariado' %}">Voluntariado</a>
+            <a href="{% url 'sac' %}">Fale com a AFR</a>
+            <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+            <a href="{% url 'visita' %}">Faça uma visita</a>
+        </div>
+      </li>
+      <li><a href="{% url 'atendimento' %}">Atendimento</a></li>
+    </ul>
+  </nav>
+  <nav class="sidebar" id="sidebar">
+       <a href="{% url 'index' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">HOME<span></span></div></a>
+    <div class="menu-item" onclick="toggleSubmenu(this)">SOBRE<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'nossahistoria' %}">Nossa História</a>
+      <a href="{% url 'governanca' %}">Governança</a>
+      <a href="{% url 'transparencia' %}">Prestação de contas</a>
+      <a href="{% url 'certificacoes' %}">Certificações</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">ÁREA DE ATUAÇÃO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+      <a href="{% url 'index' %}">Departamento Médico</a>
+      <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+      <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">CONTATO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'visita' %}">Faça uma visita</a>
+      <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+      <a href="{% url 'voluntariado' %}">Voluntariado</a>
+      <a href="{% url 'sac' %}">Fale com a AFR</a>
+      <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+    </div>
+
+    <a href="{% url 'atendimento' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">ATENDIMENTO<span></span></div></a>
+  </nav>
+
+
+
+
+
+
+<div class="container-principal">
+
+
+
+<div class="banner">
+  <img src="{% static 'siteafr/images/bannernossahistoria.avif' %}">
+  <div class="overlay"></div>
+  <div class="banner-texto">Governança</div>
+</div>
+
+
+
+
+<div class="fundacao-container">
+  <div class="fundacao-texto">
+    Fundada em 25 de junho de 1958, a AFR sempre adotou as melhores práticas de gestão para instituições
+    filantrópicas, sem fins lucrativos. A Instituição utiliza mecanismos que visam garantir o cumprimento de seu
+    propósito, de modo ético e sustentável. Todos os Associados e demais Membros dos Conselhos e
+    Comitês são voluntários.<br><br>
+    Para saber detalhes sobre a composição e as atribuições de cada um dos órgãos que compõem a
+    governança da AFR, acesse o Estatuto Social.
+  </div>
+</div>
+
+
+
+
+
+  <div class="diretoria">
+    <div class="diretoria-container">
+      <h2>Diretoria</h2>
+      <div class="diretoria-conteudo">
+        <div class="coluna">
+          <p>Presidente Licenciada <em>Maria Augusta P. de Figueiredo</em></p>
+          <p>1° Vice-Presidente <em>Irene Ferreira Donadel</em></p>
+          <p>1° Secretário <em>Leila Maria Alonso Gomes</em></p>
+          <p>2° Secretário <em>Nilce Muller Belchior</em></p>
+        </div>
+        <div class="coluna">
+          <p>1° Tesoureiro <em>Luís Antônio da Silva Soares</em></p>
+          <p>2° Tesoureiro <em>Ivan Coutinho Correa</em></p>
+          <p>Diretor Médico <em>Alkamir Issa</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="conselho-fiscal">
+  <div class="conselho-container">
+    <h2>Conselho Fiscal</h2>
+    <div class="membros">
+      <p>Antonio Moreira Mesquita de Carvalho</p>
+      <p>Francisco Pereira da Silva</p>
+      <p>João Carlos de Carvalho</p>
+      <p>Justiniano Conhasca</p>
+      <p>Marcos Cesar Paes de Oliveira</p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="conselho-deliberativo">
+  <div class="deliberativo-container">
+    <h2>Conselho Deliberativo</h2>
+    <div class="deliberativo-content">
+      <div class="coluna-esquerda">
+        <p>Presidente<br><em>Hugo Leite Jerke</em></p>
+        <p>Vice-Presidente<br><em>Joaquim Andrade</em></p>
+      </div>
+      <div class="coluna-direita">
+        <p>1° Secretário<br><em>Nilo Rogério M. de Barros</em></p>
+        <p>2° Secretário<br><em>Mario Grillo</em></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="membros-suplementes">
+  <div class="membros-container">
+    <h2>Membros Efetivos e Suplentes</h2>
+    <div class="membros-lista">
+      <div class="coluna-membros">
+        <p>Anna Pereira dos Santos</p>
+        <p>Cenila Silveira</p>
+        <p>Carmem Policarpo Medeiros</p>
+        <p>Claudio Maia Donadel</p>
+        <p>Clynton Lourenço Correa</p>
+        <p>Gentil Moreira de Souza</p>
+        <p>Helineia Silva</p>
+        <p>Humberto Correa Lombardo</p>
+        <p>Izabel Maria Madeira de L. Maior</p>
+        <p>José Eduardo Nogueira Diniz</p>
+        <p>José Eduardo Nogueira Diniz</p>
+        <p>Kilza Farias de Mello</p>
+        <p>Luiz Cumaru</p>
+      </div>
+      <div class="coluna-membros">
+        <p>Marcelo Ferreira</p>
+        <p>Marcelo Rhenius de Oliveira</p>
+        <p>Maria Eliane dos Santos Ribeiro</p>
+        <p>Marina Barreiros de Souza</p>
+        <p>Marly Saad</p>
+        <p>Nádia Las Casas Feichas</p>
+        <p>Oswaldo Luiz Ferreira</p>
+        <p>Paulo Freitas</p>
+        <p>Paulo Roberto Sad da Silva</p>
+        <p>Pedro Rezende Bustillos</p>
+        <p>Renato Abreu</p>
+        <p>Renato Thadeu Silva Jorge Mussi</p>
+        <p>Rosane Barreto Lemos</p>
+        <p>Cruz</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="superintendencia">
+  <div class="superintendencia-container">
+    <h2>Superintendência</h2>
+    <p><em>Telmo Silva Hoelz</em></p>
+  </div>
+</div>
+
+
+
+
+<div class="estatuto">
+  <div class="estatuto-container">
+    <div class="estatuto-texto">
+      <h2>Estatuto Social</h2>
+      <p>
+        O Estatuto Social é o documento jurídico que rege a AFR. Ele registra as principais características e regras de funcionamento da Instituição, como: as áreas de atuação e finalidades da AFR; os direitos e deveres dos Associados; a composição e as atribuições dos órgãos de administração.
+      </p>
+      <p>
+        O Estatuto Social está disponível para consulta aqui.
+      </p>
+    </div>
+
+<div class="estatuto-download">
+  <a href="https://www.afr.org.br/_files/ugd/ec0c85_de045b5bf9264709a646fc9c1378febf.pdf" class="botao-download">
+    <div class="icone-paperclip">
+
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#fff" stroke-width="2" 
+      stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
+        <path d="M21.44 11.05l-9.19 9.19a5.5 5.5 0 01-7.78-7.78l9.19-9.19a3.5 3.5 0 014.95 4.95L8.91 16.33"></path>
+      </svg>
+    </div>
+    <div class="texto-download">Download Estatuto Social</div>
+  </a>
+</div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+ <footer class="footer">
+  <div class="footer-header">
+    <a href="#"><img src="{% static 'siteafr/images/AFRIMG4.png' %}" alt="Logo da AFR" class="logo" title="Logo da AFR" id="voltarTopo"/></a>
+    <div class="social-icons-footer">
+      <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>UNIDADES</h3>
+      <ul>
+        <li><a href="{% url 'unidadefluminense' %}">Associação Fluminense de Reabilitação</a></li>
+        <li><a href="{% url 'unidadelisaura' %}">Unidade de Reabilitação e Atendimento Especializado Lisaura Ruas</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>OUTRAS PÁGINAS</h3>
+      <ul>
+        <li><a href="{% url 'parceiroscaptacao' %}">Parceiros de Captação</a></li>
+        <li><a href="{% url 'imprensa' %}">Imprensa</a></li>
+        <li><a href="{% url 'editais' %}">Editais</a></li>
+        <li><a href="{% url 'fag' %}">Perguntas Frequentes</a></li>
+        <li><a href="{% url 'guia' %}">Guia</a></li>
+        <li><a href="{% url 'privacidade' %}">Política de Privacidade</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>COMO AJUDAR</h3>
+      <ul>
+        <li><a href="{% url 'doacao' %}" class="btn-footer"><i class="icon-red fa-solid fa-heart"></i>Fazer Doação</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>CERTIFICAÇÕES</h3>
+      <ul>
+        <li><img src="{% static 'siteafr/images/CEBASCERTIFICACAO.png' %}" class="cert"/></li>
+      </ul>
+    </div>
+  </div>
+ </footer>
+<script src="{% static 'siteafr/script.js' %}"></script>
+</body>
+</html>
+

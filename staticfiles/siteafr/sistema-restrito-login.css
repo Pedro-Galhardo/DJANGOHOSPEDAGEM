@@ -1,0 +1,108 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to left, #E21C21, #8b0000);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+        position: relative;
+    }
+    .btn-voltar{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+    .btn-voltar:hover{
+        text-decoration: underline;
+    }
+    .login-container {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      color: #d91a1f;
+      font-family: 'Fira Sans', sans-serif;
+        font-weight: 700;
+    }
+    .login-container img{
+        width: 45px;
+        height: 60px;
+    }
+    .flex{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    .flex-bt{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 30px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      color: black;
+      margin-bottom: 8px;
+        font-weight: 450;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: 0.3s ease;
+    }
+
+    .form-group input:focus {
+      border-color: #E21C21;
+      outline: none;
+      box-shadow: 0 0 0 1px rgb(175, 5, 5);
+    }
+
+    .login-button {
+      background-color: #E21C21;
+      color: white;
+      border: none;
+      padding: 10px 20px 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-button:hover {
+      background-color: #990000;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #888;
+    }
+    .erro{
+        margin-top: 20px;
+    }

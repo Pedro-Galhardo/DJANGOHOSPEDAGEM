@@ -1,0 +1,6 @@
+services:
+- type: web
+  name: projeto-django-hospedado
+  env: python
+  buildCommand: './build_files.sh'
+  startCommand: 'gunicorn ProjetoAFRDjango.wsgi:application'

@@ -1,0 +1,463 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AFR - Transparência e Prestação de Contas | Brasil</title>
+  <link rel="stylesheet" href="{% static 'siteafr/transparencia.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+   <header class="top-header">
+    <div class="logo-container">
+      <a href="{% url 'index' %}"><img src="{% static 'siteafr/images/logo.jpg' %}" alt="Logo da AFR" class="logo" title="Logo da AFR"/></a>
+    </div>
+    <div class="info-container">
+      <div class="info-block">
+        <i class="icons fa-solid fa-location-dot"></i>
+        <div class="column">
+          <span class="bold">Niterói, RJ</span>
+          <span>Rua Lopes Trovão, 301</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-envelope"></i>
+        <div class="column">
+          <span class="bold">afr@afr.org.br</span>
+          <span>Atendimento: 07:00 - 19:00</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="icons fa-solid fa-mobile-screen-button"></i>
+        <div class="column">
+          <span class="bold">(21) 2109-2626</span>
+          <span>Fale conosco!</span>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div class="info-block">
+        <a href="{% url 'doacao' %}" class="btn"><i class="icon-white fa-solid fa-heart"></i>Fazer Doação</a>
+      </div>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <nav class="main-nav">
+    <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Sobre</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'nossahistoria' %}">Nossa História</a>
+          <a href="{% url 'governanca' %}">Governança</a>
+          <a href="{% url 'transparencia' %}">Transparência e prestação de contas</a>
+          <a href="{% url 'certificacoes' %}">Certificações</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Área de atuação</a>
+        <div class="dropdown-menu">
+          <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+          <a href="{% url 'depmedico' %}">Departamento Médico</a>
+          <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+          <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="#">Contato</a>
+        <div class="dropdown-menu">
+            <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+            <a href="{% url 'voluntariado' %}">Voluntariado</a>
+            <a href="{% url 'sac' %}">Fale com a AFR</a>
+            <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+            <a href="{% url 'visita' %}">Faça uma visita</a>
+        </div>
+      </li>
+      <li><a href="{% url 'atendimento' %}">Atendimento</a></li>
+    </ul>
+  </nav>
+  <nav class="sidebar" id="sidebar">
+       <a href="{% url 'index' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">HOME<span></span></div></a>
+    <div class="menu-item" onclick="toggleSubmenu(this)">SOBRE<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'nossahistoria' %}">Nossa História</a>
+      <a href="{% url 'governanca' %}">Governança</a>
+      <a href="{% url 'transparencia' %}">Prestação de contas</a>
+      <a href="{% url 'certificacoes' %}">Certificações</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">ÁREA DE ATUAÇÃO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'reabilitação' %}">Centro de Reabilitação</a>
+      <a href="{% url 'index' %}">Departamento Médico</a>
+      <a href="{% url 'afrmais' %}">Espaço AFR+</a>
+      <a href="{% url 'oficinaorto' %}">Oficina Ortopédica</a>
+    </div>
+
+    <div class="menu-item" onclick="toggleSubmenu(this)">CONTATO<span>&#65088;</span></div>
+    <div class="submenu">
+      <a href="{% url 'visita' %}">Faça uma visita</a>
+      <a href="{% url 'trabalheconosco' %}">Trabalhe Conosco</a>
+      <a href="{% url 'voluntariado' %}">Voluntariado</a>
+      <a href="{% url 'sac' %}">Fale com a AFR</a>
+      <a href="{% url 'cooperacao' %}">Cooperação Técnica</a>
+    </div>
+
+    <a href="{% url 'atendimento' %}" class="underline-none"><div class="menu-item" onclick="toggleSubmenu(this)">ATENDIMENTO<span></span></div></a>
+  </nav>
+
+
+
+  
+
+<div class="banner">
+  <img src="{% static 'siteafr/images/imgpedrotrans.avif' %}">
+  <div class="overlay"></div>
+  <div class="banner-texto">Transparência e <br>Prestação de Contas</div>
+</div>
+
+
+<div class="transparencia-container">
+  <div class="transparencia-texto">
+    A AFR tem compromisso com a transparência e a prestação de contas, especialmente importantes diante da<br>
+    sua condição de associação sem fins lucrativos que conta com o apoio da sociedade.<br>
+    A fim de prestar contas das contribuições recebidas, envolver os doadores e demais públicos nos resultados<br>
+    obtidos, são disponibilizados os seguintes documentos e informações:
+  </div>
+</div>
+
+  <div class="convenios-imagem">
+    <img src="{% static 'siteafr/images/imgpedrotrans4.avif' %}">
+    <div class="convenios-banner">
+      CONTRATOS, PARCERIAS<br>
+      E CONVÊNIOS PÚBLICOS
+    </div>
+  </div>
+
+
+<div class="transparencia-container">
+  <div class="transparencia-texto">
+  Dados sobre os Convênios, Contratos e outros instrumentos firmados com órgãos governamentais nas esferas federal, estadual e municipal.<br>
+  Clique abaixo  para acessar a relação de Convênios, Contratos e outros instrumentos firmados com a administração pública<br>
+  Para mais informações, entre em contato: afr@afr.org.br<br>
+  </div>
+</div>
+  
+
+
+
+<div class="documentos-container">
+  <div class="documento-item">
+    <div class="linha-esquerda">
+      <a href="https://www.afr.org.br/_files/ugd/a5c98a_49ceb37fcdb54d37ba71702c9d7fff53.pdf" class="titulo" target="_blank">Convênio 06-2020</a>
+      <div class="linha"></div>
+    </div>
+    <a href="https://www.afr.org.br/_files/ugd/a5c98a_49ceb37fcdb54d37ba71702c9d7fff53.pdf" class="icone" target="_blank">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#000" stroke-width="2" 
+      stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
+        <path d="M21.44 11.05l-9.19 9.19a5.5 5.5 0 01-7.78-7.78l9.19-9.19a3.5 3.5 0 014.95 4.95L8.91 16.33"></path>
+      </svg>
+    </a>
+  </div>
+
+  <div class="documento-item">
+    <div class="linha-esquerda">
+      <a href="https://www.afr.org.br/_files/ugd/a5c98a_ba4eee25c720428d92a8bf575e4e1c74.pdf" class="titulo" target="_blank">Termo de Convênio 01-2020</a>
+      <div class="linha"></div>
+    </div>
+    <a href="https://www.afr.org.br/_files/ugd/a5c98a_ba4eee25c720428d92a8bf575e4e1c74.pdf" class="icone" target="_blank">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#000" stroke-width="2" 
+      stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
+        <path d="M21.44 11.05l-9.19 9.19a5.5 5.5 0 01-7.78-7.78l9.19-9.19a3.5 3.5 0 014.95 4.95L8.91 16.33"></path>
+      </svg>
+    </a>
+  </div>
+
+  <div class="documento-item">
+    <div class="linha-esquerda">
+      <a href="https://www.afr.org.br/_files/ugd/670aec_bc37cfc25c9b4935acd83092222924fc.pdf" class="titulo" target="_blank">Declaração de Igualdade Social</a>
+      <div class="linha"></div>
+    </div>
+    <a href="https://www.afr.org.br/_files/ugd/670aec_bc37cfc25c9b4935acd83092222924fc.pdf" class="icone" target="_blank">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#000" stroke-width="2" 
+      stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
+        <path d="M21.44 11.05l-9.19 9.19a5.5 5.5 0 01-7.78-7.78l9.19-9.19a3.5 3.5 0 014.95 4.95L8.91 16.33"></path>
+      </svg>
+    </a>
+  </div>
+</div>
+
+
+
+
+
+<div class="relatorio-container">
+  <div class="imagem-container">
+    <img src="{% static 'siteafr/images/imgpedrotrans2.avif' %}" alt="Palestra" class="imagem-fundo">
+    <div class="faixa-vermelha">
+      RELATÓRIO DE ATIVIDADES
+    </div>
+  </div>
+
+
+  <div class="texto-descricao">
+    Aqui, você pode acompanhar as últimas versões do Relatório de Atividades da AFR, sobre as ações
+    desenvolvidas durante o ano. O objetivo é compartilhar com Pacientes, Funcionários, Voluntários, Doadores e
+    demais públicos as principais conquistas, desafios e planos para o futuro da Instituição. <br><br>
+    A fim de aprimorar a comunicação com os seus públicos, propõe uma visão mais estratégica e concisa sobre a
+    Instituição. Elaborado com a participação ativa da Diretoria, Superintendência e Equipe Técnica/Administrativa,
+    o documento apresenta os temas apontados como mais importantes pelos públicos da AFR.
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="documentos-container">
+  <div class="documento-item">
+    <div class="linha-esquerda">
+      <a href="" class="titulo" target="_blank">
+Relatório Integrado 2018/2019</a>
+      <div class="linha"></div>
+    </div>
+    <a href="" class="icone" target="_blank">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#000" stroke-width="2" 
+      stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
+        <path d="M21.44 11.05l-9.19 9.19a5.5 5.5 0 01-7.78-7.78l9.19-9.19a3.5 3.5 0 014.95 4.95L8.91 16.33"></path>
+      </svg>
+    </a>
+  </div>
+
+  <div class="documento-item">
+    <div class="linha-esquerda">
+      <a href="" class="titulo" target="_blank">
+Relatório Integrado 2019/2020</a>
+      <div class="linha"></div>
+    </div>
+    <a href="" class="icone" target="_blank">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#000" stroke-width="2" 
+      stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
+        <path d="M21.44 11.05l-9.19 9.19a5.5 5.5 0 01-7.78-7.78l9.19-9.19a3.5 3.5 0 014.95 4.95L8.91 16.33"></path>
+      </svg>
+    </a>
+  </div>
+
+
+  <div class="documento-item">
+    <div class="linha-esquerda">
+      <a href="" class="titulo" target="_blank">
+Relatório Integrado 2020/2021</a>
+      <div class="linha"></div>
+    </div>
+    <a href="" class="icone" target="_blank">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#000" stroke-width="2" 
+      stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
+        <path d="M21.44 11.05l-9.19 9.19a5.5 5.5 0 01-7.78-7.78l9.19-9.19a3.5 3.5 0 014.95 4.95L8.91 16.33"></path>
+      </svg>
+    </a>
+  </div>
+
+
+
+  <div class="documento-item">
+    <div class="linha-esquerda">
+      <a href="" class="titulo" target="_blank">
+Relatório Integrado 2021/2022</a>
+      <div class="linha"></div>
+    </div>
+    <a href="" class="icone" target="_blank">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#000" stroke-width="2" 
+      stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
+        <path d="M21.44 11.05l-9.19 9.19a5.5 5.5 0 01-7.78-7.78l9.19-9.19a3.5 3.5 0 014.95 4.95L8.91 16.33"></path>
+      </svg>
+    </a>
+  </div>
+
+
+  <div class="documento-item">
+    <div class="linha-esquerda">
+      <a href="" class="titulo" target="_blank">
+Relatório de Atividades 2022/2023</a>
+      <div class="linha"></div>
+    </div>
+    <a href="" class="icone" target="_blank">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#000" stroke-width="2" 
+      stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
+        <path d="M21.44 11.05l-9.19 9.19a5.5 5.5 0 01-7.78-7.78l9.19-9.19a3.5 3.5 0 014.95 4.95L8.91 16.33"></path>
+      </svg>
+    </a>
+  </div>
+
+
+  <div class="documento-item">
+    <div class="linha-esquerda">
+      <a href="" class="titulo" target="_blank">
+Relatório de Atividades 2023/2024</a>
+      <div class="linha"></div>
+    </div>
+    <a href="" class="icone" target="_blank">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#000" stroke-width="2" 
+      stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
+        <path d="M21.44 11.05l-9.19 9.19a5.5 5.5 0 01-7.78-7.78l9.19-9.19a3.5 3.5 0 014.95 4.95L8.91 16.33"></path>
+      </svg>
+    </a>
+  </div>
+
+  <div class="documento-item">
+    <div class="linha-esquerda">
+      <a href="" class="titulo" target="_blank">
+Relatório de Atividades 2024/2025</a>
+      <div class="linha"></div>
+    </div>
+    <a href="" class="icone" target="_blank">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#000" stroke-width="2" 
+      stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
+        <path d="M21.44 11.05l-9.19 9.19a5.5 5.5 0 01-7.78-7.78l9.19-9.19a3.5 3.5 0 014.95 4.95L8.91 16.33"></path>
+      </svg>
+    </a>
+  </div>
+
+
+
+<div class="relatorio-container">
+  <div class="imagem-container">
+    <img src="{% static 'siteafr/images/imgpedrotrans3.avif' %}" alt="Palestra" class="imagem-fundo">
+    <div class="faixa-vermelha">
+      DEMONSTRAÇÕES FINANCEIRAS
+    </div>
+  </div>
+
+
+  <div class="texto-descricao">
+    Balanços Patrimoniais, Demonstrações do Resultado Financeiro, Pareceres da Auditoria Independente e Conselho Fiscal da AFR
+    Motivada pelo compromisso com a transparência e a prestação de contas, a AFR torna público à sociedade seu resultado financeiro.
+    As Demonstrações Financeiras são examinadas anualmente por  Auditoria Independente, bem como pelo Conselho Fiscal.
+  </div>
+</div>
+
+
+
+
+  <div class="documento-item">
+    <div class="linha-esquerda">
+      <a href="" class="titulo" target="_blank">
+
+Demostrações financeiras 17/2018</a>
+      <div class="linha"></div>
+    </div>
+    <a href="" class="icone" target="_blank">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#000" stroke-width="2" 
+      stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
+        <path d="M21.44 11.05l-9.19 9.19a5.5 5.5 0 01-7.78-7.78l9.19-9.19a3.5 3.5 0 014.95 4.95L8.91 16.33"></path>
+      </svg>
+    </a>
+  
+</div>
+
+  
+  <div class="documento-item">
+    <div class="linha-esquerda">
+      <a href="" class="titulo" target="_blank">
+
+
+Demostrações financeiras 21/2022</a>
+      <div class="linha"></div>
+    </div>
+    <a href="" class="icone" target="_blank">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#000" stroke-width="2" 
+      stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
+        <path d="M21.44 11.05l-9.19 9.19a5.5 5.5 0 01-7.78-7.78l9.19-9.19a3.5 3.5 0 014.95 4.95L8.91 16.33"></path>
+      </svg>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+ <footer class="footer">
+  <div class="footer-header">
+    <a href="#"><img src="{% static 'siteafr/images/AFRIMG4.png' %}" alt="Logo da AFR" class="logo" title="Logo da AFR" id="voltarTopo"/></a>
+    <div class="social-icons-footer">
+      <a href="https://www.facebook.com/AFROficial/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/afr.oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UCU9QXygeNJ2Z7h2pfiiZ2uA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>UNIDADES</h3>
+      <ul>
+        <li><a href="{% url 'unidadefluminense' %}">Associação Fluminense de Reabilitação</a></li>
+        <li><a href="{% url 'unidadelisaura' %}">Unidade de Reabilitação e Atendimento Especializado Lisaura Ruas</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>OUTRAS PÁGINAS</h3>
+      <ul>
+        <li><a href="{% url 'parceiroscaptacao' %}">Parceiros de Captação</a></li>
+        <li><a href="{% url 'imprensa' %}">Imprensa</a></li>
+        <li><a href="{% url 'editais' %}">Editais</a></li>
+        <li><a href="{% url 'fag' %}">Perguntas Frequentes</a></li>
+        <li><a href="{% url 'guia' %}">Guia</a></li>
+        <li><a href="{% url 'privacidade' %}">Política de Privacidade</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>COMO AJUDAR</h3>
+      <ul>
+        <li><a href="{% url 'doacao' %}" class="btn-footer"><i class="icon-red fa-solid fa-heart"></i>Fazer Doação</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>CERTIFICAÇÕES</h3>
+      <ul>
+        <li><img src="{% static 'siteafr/images/CEBASCERTIFICACAO.png' %}" class="cert"/></li>
+      </ul>
+    </div>
+  </div>
+  </footer>
+<script src="{% static 'siteafr/script.js' %}"></script>
+</body>
+
+
+</html>
